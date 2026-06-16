@@ -1,0 +1,2323 @@
+<!DOCTYPE html>
+<html lang="en" data-page="dashboard">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpeakUp English — School Manager</title>
+<meta name="theme-color" content="#EAF3F4">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAFGklEQVR4nO3d3W0bRwCF0aXgEgS4CANuR2WkFpfhdgy4iADuwXlIxqEokvu/OzP3nLckgMRI99tZkrJ8GSrz6/uX32c/Bvb1+vbzcvZjKE59IMZOcVYUh39So2fMkTEc9okMn7mOCGH3T2D4rLVnCLt9YMNna3uEsPkHNHz2tmUIL1t9oGEwfo6x5c42KcnwOcva02D1CWD8nGnt/lYFYPzUYM0OFwdg/NRk6R4XBWD81GjJLmcHYPzUbO4+ZwVg/LRgzk4nB2D8tGTqXicFYPy0aMpuRwMwflo2tt9NfxQCWvM0AFd/evBsxw8DMH568mjPboGIdjcAV396dG/XTgCifQjA1Z+e3e7bCUC0dwG4+pPgeudOAKL9CcDVnyRl704AogmAaJdhcPtDLicA0QRANAEQTQBEe/EEmGROAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGifzn4Aqb7+9fe7f/7x7fNJjySbE+AEt+N/9O/YnwCIJoCDPbvSOwWOJwCiCaAyToFjCaBCIjjOxW+FOMbSUXt5dF8C2NkWV3MR7EcAO9njNkYI2xPAxo64fxfCdgSwkTOeuAphPQGsVMMrNkJYTgAL1TD8W0KYTwAz1Tj8W0KYTgATtTD8W0IYJ4ARLQ7/lhAeE8ADPQz/lhA+EsCNHod/Swj/E8B/EoZ/SwgCiBz+tfQIYgNIH/6t1BDiAjD859JCiAnA8OdJCaH7AAx/nd5D6DYAw99WryF0F4Dh76u3ELoJwPCP1UsIzQdg+OdqPYRmAzD8urQaQnMBGH7dWguhmQAMvy2thFB9AIbfttpDqDYAw+9LrSFUF4Dh9622EKoJwPCz1BJCNQEUQuhbLcMvqgugEEJfaht+UW0AhRDaVuvwi+oDKITQltqHXzQTQCGEurUy/KK5AAoh1Ke18Q9Dw39H2I9vn5v8glOXZgMohHCOXr7un85+AFsp3wy3RvvqYfTXugmgEMI+eht+0V0AhRC20evwi24DKISwTO/DL7oPoBDCNCnDL2ICKIRwX9rwi7gACiH8K3X4RfPvA6yVPoB08QGQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEMOT+ueDU/+9rzf569D0k/YaIteN/9LVqLSonwJXWvnlL7TX+sf9WIyfAHa19E+dYM/65X5cWLiixvxjrmRa+cWzDLRCTLDkVWzhJBcCoNUOuPQIBEE0ARBMA0QRANAEQTQCMWvO+SO3vqQiASZYMufbxD4MACOdngZht7M2tFq78hROA2Z4NvKXxD4MTgHBOAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAor28vv28nP0g4CxOAKIJgGgCIJoAiPYyDMPgiTCJXt9+XpwARBMA0f4E4DaIJGXvTgCivQvAKUCC6507AYj2IQCnAD273bcTgGh3A3AK0KN7u3YCEO1hAE4BevJoz09PABHQg2c7dgtEtNEAnAK0bGy/k04AEdCiKbudfAskAloyda+zngOIgBbM2ensJ8EioGZz97noVSARUKMlu1z8MqgIqMnSPa56H0AE1GDNDle/ESYCzrR2f5uO99f3L7+3/HjwyFYX3k1/FMJpwBG23Nlug3UasLU9LrC7X7GFwFp73lkcdssiBOY64pb68Ht2ITDmyOeSpz5pFQPFWS+g/AMix/T4yHIpHwAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAFGklEQVR4nO3d3W0bRwCF0aXgEgS4CANuR2WkFpfhdgy4iADuwXlIxqEokvu/OzP3nLckgMRI99tZkrJ8GSrz6/uX32c/Bvb1+vbzcvZjKE59IMZOcVYUh39So2fMkTEc9okMn7mOCGH3T2D4rLVnCLt9YMNna3uEsPkHNHz2tmUIL1t9oGEwfo6x5c42KcnwOcva02D1CWD8nGnt/lYFYPzUYM0OFwdg/NRk6R4XBWD81GjJLmcHYPzUbO4+ZwVg/LRgzk4nB2D8tGTqXicFYPy0aMpuRwMwflo2tt9NfxQCWvM0AFd/evBsxw8DMH568mjPboGIdjcAV396dG/XTgCifQjA1Z+e3e7bCUC0dwG4+pPgeudOAKL9CcDVnyRl704AogmAaJdhcPtDLicA0QRANAEQTQBEe/EEmGROAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGifzn4Aqb7+9fe7f/7x7fNJjySbE+AEt+N/9O/YnwCIJoCDPbvSOwWOJwCiCaAyToFjCaBCIjjOxW+FOMbSUXt5dF8C2NkWV3MR7EcAO9njNkYI2xPAxo64fxfCdgSwkTOeuAphPQGsVMMrNkJYTgAL1TD8W0KYTwAz1Tj8W0KYTgATtTD8W0IYJ4ARLQ7/lhAeE8ADPQz/lhA+EsCNHod/Swj/E8B/EoZ/SwgCiBz+tfQIYgNIH/6t1BDiAjD859JCiAnA8OdJCaH7AAx/nd5D6DYAw99WryF0F4Dh76u3ELoJwPCP1UsIzQdg+OdqPYRmAzD8urQaQnMBGH7dWguhmQAMvy2thFB9AIbfttpDqDYAw+9LrSFUF4Dh9622EKoJwPCz1BJCNQEUQuhbLcMvqgugEEJfaht+UW0AhRDaVuvwi+oDKITQltqHXzQTQCGEurUy/KK5AAoh1Ke18Q9Dw39H2I9vn5v8glOXZgMohHCOXr7un85+AFsp3wy3RvvqYfTXugmgEMI+eht+0V0AhRC20evwi24DKISwTO/DL7oPoBDCNCnDL2ICKIRwX9rwi7gACiH8K3X4RfPvA6yVPoB08QGQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEMOT+ueDU/+9rzf569D0k/YaIteN/9LVqLSonwJXWvnlL7TX+sf9WIyfAHa19E+dYM/65X5cWLiixvxjrmRa+cWzDLRCTLDkVWzhJBcCoNUOuPQIBEE0ARBMA0QRANAEQTQCMWvO+SO3vqQiASZYMufbxD4MACOdngZht7M2tFq78hROA2Z4NvKXxD4MTgHBOAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAor28vv28nP0g4CxOAKIJgGgCIJoAiPYyDMPgiTCJXt9+XpwARBMA0f4E4DaIJGXvTgCivQvAKUCC6507AYj2IQCnAD273bcTgGh3A3AK0KN7u3YCEO1hAE4BevJoz09PABHQg2c7dgtEtNEAnAK0bGy/k04AEdCiKbudfAskAloyda+zngOIgBbM2ensJ8EioGZz97noVSARUKMlu1z8MqgIqMnSPa56H0AE1GDNDle/ESYCzrR2f5uO99f3L7+3/HjwyFYX3k1/FMJpwBG23Nlug3UasLU9LrC7X7GFwFp73lkcdssiBOY64pb68Ht2ITDmyOeSpz5pFQPFWS+g/AMix/T4yHIpHwAAAABJRU5ErkJggg==">
+<link rel="manifest" href='data:application/manifest+json,%7B%22name%22%3A%22SpeakUp%20English%22%2C%22short_name%22%3A%22SpeakUp%22%2C%22description%22%3A%22School%20Manager%20%5Cu2014%20by%20MK%20Core%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23EAF3F4%22%2C%22theme_color%22%3A%22%23EAF3F4%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAFGklEQVR4nO3d3W0bRwCF0aXgEgS4CANuR2WkFpfhdgy4iADuwXlIxqEokvu/OzP3nLckgMRI99tZkrJ8GSrz6/uX32c/Bvb1%2BvbzcvZjKE59IMZOcVYUh39So2fMkTEc9okMn7mOCGH3T2D4rLVnCLt9YMNna3uEsPkHNHz2tmUIL1t9oGEwfo6x5c42KcnwOcva02D1CWD8nGnt/lYFYPzUYM0OFwdg/NRk6R4XBWD81GjJLmcHYPzUbO4%2BZwVg/LRgzk4nB2D8tGTqXicFYPy0aMpuRwMwflo2tt9NfxQCWvM0AFd/evBsxw8DMH568mjPboGIdjcAV396dG/XTgCifQjA1Z%2Be3e7bCUC0dwG4%2BpPgeudOAKL9CcDVnyRl704AogmAaJdhcPtDLicA0QRANAEQTQBEe/EEmGROAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGifzn4Aqb7%2B9fe7f/7x7fNJjySbE%2BAEt%2BN/9O/YnwCIJoCDPbvSOwWOJwCiCaAyToFjCaBCIjjOxW%2BFOMbSUXt5dF8C2NkWV3MR7EcAO9njNkYI2xPAxo64fxfCdgSwkTOeuAphPQGsVMMrNkJYTgAL1TD8W0KYTwAz1Tj8W0KYTgATtTD8W0IYJ4ARLQ7/lhAeE8ADPQz/lhA%2BEsCNHod/Swj/E8B/EoZ/SwgCiBz%2BtfQIYgNIH/6t1BDiAjD859JCiAnA8OdJCaH7AAx/nd5D6DYAw99WryF0F4Dh76u3ELoJwPCP1UsIzQdg%2BOdqPYRmAzD8urQaQnMBGH7dWguhmQAMvy2thFB9AIbfttpDqDYAw%2B9LrSFUF4Dh9622EKoJwPCz1BJCNQEUQuhbLcMvqgugEEJfaht%2BUW0AhRDaVuvwi%2BoDKITQltqHXzQTQCGEurUy/KK5AAoh1Ke18Q9Dw39H2I9vn5v8glOXZgMohHCOXr7un85%2BAFsp3wy3RvvqYfTXugmgEMI%2Beht%2B0V0AhRC20evwi24DKISwTO/DL7oPoBDCNCnDL2ICKIRwX9rwi7gACiH8K3X4RfPvA6yVPoB08QGQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEMOT%2BueDU/%2B9rzf569D0k/YaIteN/9LVqLSonwJXWvnlL7TX%2Bsf9WIyfAHa19E%2BdYM/65X5cWLiixvxjrmRa%2BcWzDLRCTLDkVWzhJBcCoNUOuPQIBEE0ARBMA0QRANAEQTQCMWvO%2BSO3vqQiASZYMufbxD4MACOdngZht7M2tFq78hROA2Z4NvKXxD4MTgHBOAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAor28vv28nP0g4CxOAKIJgGgCIJoAiPYyDMPgiTCJXt9%2BXpwARBMA0f4E4DaIJGXvTgCivQvAKUCC6507AYj2IQCnAD273bcTgGh3A3AK0KN7u3YCEO1hAE4BevJoz09PABHQg2c7dgtEtNEAnAK0bGy/k04AEdCiKbudfAskAloyda%2BzngOIgBbM2ensJ8EioGZz97noVSARUKMlu1z8MqgIqMnSPa56H0AE1GDNDle/ESYCzrR2f5uO99f3L7%2B3/HjwyFYX3k1/FMJpwBG23Nlug3UasLU9LrC7X7GFwFp73lkcdssiBOY64pb68Ht2ITDmyOeSpz5pFQPFWS%2Bg/AMix/T4yHIpHwAAAABJRU5ErkJggg%3D%3D%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image/png%22%7D%2C%7B%22src%22%3A%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAP%2BElEQVR4nO3d0Y0TWbuF4Wo0IYxEEEikM2EQC2GQDtIEgUQOzAXq6cZtt112Ve3v2%2Bt5Lo90fpU3Dev1tmGeFkr6%2Be3Tr9HPALCVv//592n0M/AnvyCDGHiAFwLheA78AMYeYD1RsC%2BHuwODD7A9QbAth7kBgw9wPEHwGId3J6MPUIcYWM%2BBrWD0AeoTA7dxSFcYfYC%2BxMBlDuYCww8wDyHwlgN5xegDzE8M/OYQFsMPkCg9BKJfvOEHIDUEIl%2B04QfgVFoIRL1Yww/ANSkhEPEiDT8Aa80eAh9GP8DejD8A95h9P6atm9l/4QA4zoy3AdO9IMMPwF5mCoGpPgIw/gDsaaadmaJkZvoFAaCH7rcB7W8AjD8AI3Tfn9YB0P3wAeit8w61vL7ofOAAzKnbRwLtbgCMPwAVddunVgHQ7XAByNJpp1pcV3Q6UABYlvofCZS/ATD%2BAHRUfb9KB0D1wwOA91TesbIBUPnQAOBWVfesZABUPSwAuEfFXSsXABUPCQAeVW3fSgVAtcMBgC1V2rkyAVDpUABgL1X2rkQAVDkMADhChd0bHgAVDgEAjjZ6/4YGwOgXDwAjjdzBYQFg/AFg3B4OCQDjDwAvRuzi4QFg/AHgraP38dAAMP4AcNmRO3lYABh/ALjuqL08JACMPwDc7ojdHP7vAAAAx9s9ALz7B4D19t7PXQPA%2BAPA/fbc0d0CwPgDwOP22lPfAQCAQLsEgHf/ALCdPXZ18wAw/gCwva33ddMAMP4AsJ8td9Z3AAAg0GYB4N0/AOxvq73dJACMPwAcZ4vd9REAAAR6OAC8%2BweA4z26v24AACDQQwHg3T8AjPPIDt8dAMYfAMa7d499BAAAge4KAO/%2BAaCOe3bZDQAABFodAN79A0A9a/fZDQAABFoVAN79A0Bda3baDQAABLo5ALz7B4D6bt1rNwAAEOimAPDuHwD6uGW33QAAQCABAACBrgaA638A6OfafrsBAIBA7waAd/8A0Nd7O%2B4GAAACCQAACHQxAFz/A0B/l/bcDQAABBIAABDobAC4/geAeZzbdTcAABBIAABAoDcB4PofAOZzuu9uAAAgkAAAgEACAAAC/REAPv8HgHm93nk3AAAQSAAAQCABAACB/g8An/8DwPye994NAAAEEgAAEEgAAEAgAQAAgZ6WxRcAASCNGwAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAH/wbAACQxw0AAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAECgv0Y/AHCsz19%2BnP2/f//68eAnAUZ6%2Bvnt06/RDwHs69LoXyIGYH4%2BAoDJrR3/e/9/gF4EAEzskSEXATA3AQCT2mLARQDMSwDAhLYcbhEAcxIAABBIAMBk9njH7hYA5iMAACCQAACAQAIAAAIJAAAIJAAAIJAAAG7y%2BcsPfxsAJiIAYDJ7/4d8RADMQQAAq7kNgP7854BhIiNG2X86GHoSADCBCu/GhQD0IgCgsQrD/5oIgD4EADRUbfhfEwHQgwCARioP/ykhALUJAGig0/C/JgKgLgEAhXUd/lNCAOoRAFDQLMP/mgiAWgQAFDLj8J8SAlCDAIACEob/lBCAsQQADJQ4/KeEAIwhAGAAw/%2BWEIBjCQA4kOG/TgjAMQQAHMDwrycEYF8CAHZk%2BB8nBGAfAgB2YPi3JwRgWwIANmT49ycEYBsCADZg%2BI8nBOAxAgAeYPjHEwJwHwEAdzD89QgBWEcAwAqGvz4hALcRAHADw9%2BPEID3CQB4h%2BHvTwjAeQIAzjD88xEC8CcBAK8Y/vkJAfhNAMBi%2BBMJAdIJAKIZfoQAqQQAkQw/p4QAaQQAUQw/1wgBUggAIhh%2B1hICzE4AMDXDz6OEALMSAEzJ8LM1IcBsBABTMfzsTQgwCwHAFAw/RxMCdCcAaM3wM5oQoCsBQEuGn0pEAB0JAFox/FQmBOhEANCC4acTIUAHAoDSDD%2BdCQEqEwCUZPiZiRCgIgFAKYafmQkBKhEAlGD4SSIEqEAAMJThJ5kQYCQBwBCGH14IAUYQABzK8MNlQoAjCQAOYfjhdkKAIwgAdmX44X5CgD0JAHZh%2BGE7QoA9CAA2ZfhhP0KALQkANmH44ThCgC0IAB5i%2BGEcIcAjBAB3MfxQhxDgHgKAVQw/1CUEWEMAcBPDD30IAW4hAHiX4Ye%2BhADvEQCcZfhhHkKAcwQAfzD8MC8hwGsCgGVZDD8kEQIsiwCIZ/ghlxDIJgBCGX7gmRDIJADCGH7gEiGQRQCEMPzArYRABgEwOcMP3EsIzE0ATMrwA1sRAnMSAJMx/MBehMBcBMAkDD9wFCEwBwHQnOEHRhECvQmApgw/UIUQ6EkANGP4gaqEQC8CoAnDD3QhBHoQAMUZfqArIVCbACjK8AOzEAI1CYBiDD8wKyFQiwAowvADKYRADQJgMMMPpBICYwmAQQw/wG9CYAwBcDDDD3CeEDiWABhECAD8ZvjHEACDCQEgleEfSwAUIQSAFIa/BgFQjBAAZmX4axEARQkBYBaGvyYBUJwQALoy/LUJgCaEANCF4e9BADQjBICqDH8vAqApIQBUYfh7EgDNCQFgFMPfmwCYhBAAjmL45yAAJiMEgL0Y/rkIgEkJAWArhn9OAmByQgB4hPGf14fRD8C%2Bvn/96DcwAG8IgBBCAIDXBEAYIQDAsgiAWEIAIJsACCcEII/f8yzLsvw1%2BgGo4fkPBH9rAOZl%2BHlNAPAHIQDzMfycIwA4SwhAf4af9wgA3iUEoB/Dzy0EADcRAlCf4WcNAcAqQgDqMfzcQwBwFyEA4xl%2BHiEAeIgQgOMZfrYgANiEEID9GX62JADYlBCA7Rl%2B9iAA2IUQgMcZfvYkANiVEID1DD9HEAAcQgjAdYafIwkADiUE4C3DzwgCgCGEABh%2BxhIADCUESGT4qUAAUIIQIIHhpxIBQClCgBkZfioSAJQkBJiB4acyAUBpQoCODD8dCABaEAJ0YPjp5MPoB4A1vn/96A9ZSvJzSTcCAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAaOn714%2BjHwH%2B5%2BeRjgQAAAQSALTlXRcV%2BDmkKwEAAIEEAK1598VIfv7oTAAAQCABQHvehTGCnzu6e/r57dOv0Q8BW/j85cfoRyBEx/F/9PdHx9fM%2BwQAUxEB7K3bEG79e6Lb6%2BcyHwEwFX84saduP197BLHInocbAKblDyq2YvjP63Yu/EkAMD0hwL06DtzRP%2B8dz4jfBAAxhAC36jpqo37Gu55XOgEAMIHRgSsC%2BvElQIDmRo9/lWdgHQEAAIEEAEBjld55V3oWrhMAAE1VHNyKz8R5AgAAAgkAgIYqv9Ou/Gy8EAAAEEgAAEAgAQAAgQQAQDMdPmPv8IzpBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQDQzPevH0c/wlUdnjGdAACAQAIAAAIJAAAIJAAAGqr8GXvlZ%2BOFAACAQAIAoKmK77QrPhPnCQCAxioNbqVn4ToBAACBBABAcxXeeVd4BtYRAAATGDnAxr8nAQAwiRFDbPz7EgAAEzlykI1/b08/v336NfohANje5y8/dvnfNfxzcAMAMKk9htr4z8MNAECAR28DDP98BABAoGtBYPDnJwAAIJDvAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEOjD3//8%2BzT6IQCAY7kBAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACPRhWZbFvwUAADn%2B/uffJzcAABBIAABAIAEAAIEEAAAE%2Bj8AfBEQAOb3vPduAAAgkAAAgEACAAAC/REAvgcAAPN6vfNuAAAgkAAAgEACAAACvQkA3wMAgPmc7rsbAAAIJAAAINDZAPAxAADM49yuuwEAgEACAAACXQwAHwMAQH%2BX9twNAAAEEgAAEOjdAPAxAAD09d6OuwEAgEBXA8AtAAD0c22/3QAAQCABAACBbgoAHwMAQB%2B37LYbAAAIdHMAuAUAgPpu3Ws3AAAQaFUAuAUAgLrW7LQbAAAItDoA3AIAQD1r99kNAAAEuisA3AIAQB337LIbAAAIdHcAuAUAgPHu3eOHbgBEAACM88gO%2BwgAAAI9HABuAQDgeI/urxsAAAi0SQC4BQCA42yxu5vdAIgAANjfVnvrIwAACLRpALgFAID9bLmzm98AiAAA2N7W%2B7rLRwAiAAC2s8eu%2Bg4AAATaLQDcAgDA4/ba011vAEQAANxvzx3d/SMAEQAA6%2B29n74DAACBDgkAtwAAcLsjdvOwGwARAADXHbWXh34EIAIA4LIjd/Lw7wCIAAB46%2Bh9HPIlQBEAAC9G7OKwvwUgAgBg3B4O/WuAIgCAZCN3cPi/AyACAEg0ev%2BGB8CyjD8EADhShd0rEQDLUuMwAGBvVfauTAAsS51DAYA9VNq5UgGwLLUOBwC2Um3fygXAstQ7JAB4RMVdKxkAy1LzsABgrap7VjYAlqXuoQHALSrvWOkAWJbahwcAl1Tfr9IPd%2Brnt0%2B/Rj8DALyn%2BvA/K38D8FqXQwUgU6edahUAy9LrcAHI0W2fWj3sKR8JADBat%2BF/1u4G4LWuhw7AHDrvUOsAWJbehw9AX933p/XDn/KRAAB76z78z9rfALw2yy8KADXNtDPTvJBTbgMA2MpMw/9suhd0SggAcK8Zh//ZVB8BnDPzLx4A%2B5l9P6Z%2BcafcBgBwzezD/yziRZ4SAgCcShn%2BZ1Ev9pQQACBt%2BJ9FvuhTQgAgT%2BrwP4t%2B8aeEAMD80of/mUO4QAwAzMPov%2BVArhACAH0Z/ssczApiAKA%2Bo38bh3QnMQBQh9Ffz4FtQAwAHM/oP8bh7UAQAGzP4G/LYR5AEACsZ/D35XAHEQUAL4z98f4DYaos6JMudHAAAAAASUVORK5CYII%3D%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image/png%22%7D%5D%7D'>
+<style>
+/* ============ DESIGN TOKENS ============ */
+:root{
+  color-scheme:light;
+  --bg:#EAF3F4;            /* pale mint */
+  --card:#FFFFFF;
+  --teal:#3D96A5;          /* primary */
+  --teal-deep:#2E7D8A;
+  --teal-grad:linear-gradient(135deg,#4FA3B0,#2E7D8A);
+  --teal-soft:#DDEDEF;
+  --ink:#1C3A40;           /* deep slate text */
+  --muted:#5E7A7E;
+  --line:#D8E6E8;
+  --green:#3BB273;
+  --green-soft:#E2F4EA;
+  --red:#D9534F;
+  --red-soft:#FBE9E8;
+  --amber:#E8A33D;
+  --amber-soft:#FBF1DF;
+  --hover:#F4FAFB;
+  --field:#FBFDFD;
+  --bar2:#C7DCDF;
+  --radius:18px;
+  --radius-s:12px;
+  --shadow:0 8px 24px rgba(46,125,138,.10);
+  --shadow-s:0 3px 10px rgba(46,125,138,.08);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E191C;
+  --card:#16262B;
+  --teal:#4FB3C2;
+  --teal-deep:#5FC2D0;
+  --teal-grad:linear-gradient(135deg,#3D96A5,#256874);
+  --teal-soft:#1D3A40;
+  --ink:#E7F1F2;
+  --muted:#8FAAAD;
+  --line:#24393E;
+  --green:#4CC98A;
+  --green-soft:#15352A;
+  --red:#E57B77;
+  --red-soft:#3B201F;
+  --amber:#E8B05C;
+  --amber-soft:#39301A;
+  --hover:#1B2E33;
+  --field:#101F23;
+  --bar2:#2C474D;
+  --shadow:0 8px 24px rgba(0,0,0,.4);
+  --shadow-s:0 3px 10px rgba(0,0,0,.3);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--bg);min-height:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;min-height:100vh}
+button{font-family:var(--font);cursor:pointer}
+input,select,textarea{font-family:var(--font);font-size:.95rem}
+h1,h2,h3{line-height:1.25}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:6px}
+
+/* ============ LAYOUT ============ */
+.topnav{
+  position:sticky;top:0;z-index:100;background:var(--card);
+  border-bottom:1px solid var(--line);box-shadow:var(--shadow-s);
+}
+.topnav-inner{
+  max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:16px;
+  padding:10px 22px;position:relative;
+}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand-mark{
+  width:40px;height:40px;border-radius:12px;background:var(--teal-grad);
+  display:grid;place-items:center;color:#fff;font-weight:800;font-size:1rem;flex-shrink:0;
+}
+.brand b{font-size:.98rem;display:block;line-height:1.1}
+.brand span{font-size:.68rem;color:var(--muted)}
+.nav-links{display:flex;gap:4px;flex:1;flex-wrap:wrap;justify-content:center}
+.nav-btn{
+  display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;
+  border:none;background:transparent;color:var(--muted);font-size:.88rem;font-weight:700;
+  transition:all .15s;white-space:nowrap;
+}
+.nav-btn:hover{background:var(--teal-soft);color:var(--ink)}
+.nav-btn.active{background:var(--teal-grad);color:#fff;box-shadow:var(--shadow-s)}
+.nav-icon{font-size:1rem}
+.nav-status{font-size:.74rem;color:var(--muted);flex-shrink:0;text-align:right}
+.save-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:5px;vertical-align:middle}
+.save-dot.off{background:var(--amber)}
+.burger{
+  display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);
+  background:var(--card);flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  margin-left:auto;
+}
+.theme-btn{
+  width:42px;height:42px;border-radius:12px;border:1px solid var(--line);
+  background:var(--card);font-size:1.05rem;flex-shrink:0;display:grid;place-items:center;
+  transition:background .2s;
+}
+.theme-btn:hover{background:var(--teal-soft)}
+.burger i{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:all .2s}
+.burger.open i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open i:nth-child(2){opacity:0}
+.burger.open i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.main{padding:28px 24px 40px;max-width:1240px;margin:0 auto;width:100%}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.topbar h1{font-size:1.45rem;font-weight:800}
+.topbar-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+
+/* ============ COMPONENTS ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;
+  border:none;font-weight:700;font-size:.9rem;transition:transform .12s,box-shadow .15s;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--teal-grad);color:#fff;box-shadow:var(--shadow-s)}
+.btn-ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.btn-danger{background:var(--red-soft);color:var(--red)}
+.btn-sm{padding:7px 13px;font-size:.82rem}
+
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-s);padding:22px}
+.grid{display:grid;gap:18px}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+
+.stat-card{position:relative;overflow:hidden}
+.stat-card .num{font-size:1.9rem;font-weight:800;margin:4px 0 2px}
+.stat-card .lbl{font-size:.82rem;color:var(--muted);font-weight:600}
+.stat-icon{
+  position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:12px;
+  background:var(--teal-soft);display:grid;place-items:center;font-size:1.15rem;
+}
+.stat-card.hero{background:var(--teal-grad);color:#fff}
+.stat-card.hero .lbl{color:rgba(255,255,255,.85)}
+.stat-card.hero .stat-icon{background:rgba(255,255,255,.2)}
+
+.badge{display:inline-block;padding:4px 13px;border-radius:999px;font-size:.78rem;font-weight:700}
+.badge-paid{background:var(--green-soft);color:var(--green)}
+.badge-unpaid{background:var(--red-soft);color:var(--red)}
+.badge-teal{background:var(--teal-soft);color:var(--teal-deep)}
+.badge-partial{background:var(--amber-soft);color:var(--amber)}
+
+.person{display:flex;align-items:center;gap:10px}
+.avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--teal-soft);flex-shrink:0}
+.avatar-fb{
+  width:38px;height:38px;border-radius:50%;background:var(--teal-grad);color:#fff;
+  display:inline-grid;place-items:center;font-weight:800;font-size:.78rem;flex-shrink:0;
+}
+.avatar-lg,.avatar-fb.avatar-lg{width:84px;height:84px}
+.avatar-fb.avatar-lg{font-size:1.5rem}
+.photo-row{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+
+.receipt{border:1.5px dashed var(--line);border-radius:14px;padding:24px;background:var(--field)}
+.receipt-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.receipt-table{width:100%;margin-top:6px}
+.receipt-table td{border:none;padding:7px 0}
+.receipt-table td:first-child{color:var(--muted);font-size:.86rem;width:42%}
+
+.cl-bar{height:8px;border-radius:999px;background:var(--teal-soft);overflow:hidden}
+.cl-bar-fill{height:100%;border-radius:999px;background:var(--teal-grad);transition:width .4s ease}
+
+/* weekly schedule */
+.sch-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+.sch-day{background:var(--card);border-radius:var(--radius-s);box-shadow:var(--shadow-s);padding:10px;min-height:120px}
+.sch-day-head{
+  font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--muted);text-align:center;padding:4px 0 10px;
+}
+.sch-day.today{outline:2px solid var(--teal)}
+.sch-day.today .sch-day-head{color:var(--teal)}
+.sch-date{font-size:.7rem;font-weight:600;opacity:.75;text-transform:none;letter-spacing:0}
+.sch-box{border-radius:10px;padding:8px 9px;margin-bottom:8px;font-size:.76rem;line-height:1.35;cursor:pointer;transition:transform .12s}
+.sch-box:hover{transform:translateY(-1px)}
+.sch-box b{display:block;font-size:.8rem}
+.sch-box .sch-time{font-weight:700;opacity:.75}
+.sch-box.cancelled{opacity:.5}
+.sch-box.cancelled b,.sch-box.cancelled .sch-time{text-decoration:line-through}
+.sch-box.extra{border:1.5px dashed currentColor;border-left-width:3px}
+.sch-flag{display:block;font-size:.68rem;font-weight:700;margin-top:3px;opacity:.85}
+.sch-add{
+  width:100%;border:1.5px dashed var(--line);background:transparent;color:var(--muted);
+  border-radius:10px;padding:5px 0;font-size:.85rem;font-weight:700;transition:all .15s;
+}
+.sch-add:hover{border-color:var(--teal);color:var(--teal)}
+@media print{.sch-add{display:none}}
+.sch-free{color:var(--muted);font-size:.74rem;text-align:center;padding:14px 0;opacity:.6}
+@media(max-width:1080px){.sch-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.sch-grid{grid-template-columns:1fr}}
+@media print{.sch-grid{grid-template-columns:repeat(7,1fr)!important;gap:4px}.sch-day{box-shadow:none;border:1px solid #ddd}}
+
+table{width:100%;border-collapse:collapse}
+th{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:12px;border-bottom:1px solid var(--line);font-size:.92rem;vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tbody tr{transition:background .12s}
+tbody tr:hover{background:var(--hover)}
+.row-actions{display:flex;gap:6px;justify-content:flex-end}
+.mini-btn{
+  border:none;background:var(--teal-soft);color:var(--teal-deep);border-radius:8px;
+  padding:6px 10px;font-size:.78rem;font-weight:700;
+}
+.mini-btn.danger{background:var(--red-soft);color:var(--red)}
+.mini-btn.green{background:var(--green-soft);color:var(--green)}
+
+.search{
+  display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);
+  border-radius:999px;padding:9px 16px;min-width:230px;
+}
+.search input{border:none;outline:none;background:transparent;width:100%;color:var(--ink)}
+
+select.ctrl,input.ctrl{
+  background:var(--card);border:1px solid var(--line);border-radius:999px;
+  padding:9px 16px;color:var(--ink);font-weight:600;
+}
+
+.empty{
+  text-align:center;padding:48px 20px;color:var(--muted);
+}
+.empty .big{font-size:2.2rem;margin-bottom:10px}
+
+/* ============ MODAL ============ */
+.modal-bg{
+  position:fixed;inset:0;background:rgba(28,58,64,.4);backdrop-filter:blur(3px);
+  display:none;place-items:center;z-index:300;padding:20px;
+}
+.modal-bg.open{display:grid}
+.modal{
+  background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+  width:min(560px,100%);max-height:88vh;overflow-y:auto;padding:28px;
+  animation:mpop .2s ease;
+}
+@keyframes mpop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.modal h2{font-size:1.15rem;margin-bottom:20px}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:.8rem;font-weight:700;margin-bottom:6px;color:var(--ink)}
+.field input,.field select,.field textarea{
+  width:100%;padding:11px 13px;border-radius:var(--radius-s);border:1px solid var(--line);
+  background:var(--field);color:var(--ink);
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal)}
+.field textarea{min-height:70px;resize:vertical}
+.fieldset-title{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;margin:20px 0 10px}
+.modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:22px}
+.sched-row{display:grid;grid-template-columns:1fr 1fr 1fr .8fr .8fr 38px;gap:6px;margin-bottom:8px;align-items:center}
+@media(max-width:640px){.sched-row{grid-template-columns:1fr 1fr}}
+.sched-del{border:none;background:var(--red-soft);color:var(--red);border-radius:8px;height:36px;font-weight:800}
+
+/* ============ TOAST ============ */
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
+  background:var(--ink);color:#fff;padding:12px 22px;border-radius:999px;font-size:.88rem;
+  font-weight:600;box-shadow:var(--shadow);opacity:0;transition:all .3s;z-index:400;pointer-events:none;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ============ SETUP OVERLAY ============ */
+.setup{
+  position:fixed;inset:0;background:var(--bg);z-index:500;display:grid;place-items:center;padding:20px;
+}
+.setup-card{background:var(--card);border-radius:22px;box-shadow:var(--shadow);padding:40px;max-width:480px;text-align:center}
+.setup-card .brand-mark{width:64px;height:64px;font-size:1.5rem;margin:0 auto 18px;border-radius:18px}
+.setup-card h1{font-size:1.4rem;margin-bottom:8px}
+.setup-card p{color:var(--muted);font-size:.93rem;margin-bottom:22px}
+.setup-card .btn{width:100%;justify-content:center;padding:13px;margin-bottom:10px}
+
+/* chart */
+.bars{display:flex;align-items:flex-end;gap:14px;height:180px;padding-top:10px}
+.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.bar-pair{display:flex;gap:4px;align-items:flex-end;height:140px;width:100%;justify-content:center}
+.bar{width:46%;max-width:34px;border-radius:7px 7px 3px 3px;min-height:3px;transition:height .4s ease}
+.bar.in{background:var(--teal-grad)}
+.bar.out{background:var(--bar2)}
+.bar-lbl{font-size:.72rem;color:var(--muted);font-weight:600}
+.legend{display:flex;gap:18px;font-size:.8rem;color:var(--muted);margin-bottom:6px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+.page{display:none}
+.page.active{display:block}
+
+@media print{
+  [data-theme="dark"]{
+    --bg:#fff;--card:#fff;--ink:#1C3A40;--muted:#5E7A7E;--line:#ddd;
+    --field:#fff;--hover:#fff;--teal-soft:#DDEDEF;--green-soft:#E2F4EA;
+    --red-soft:#FBE9E8;--bar2:#C7DCDF;color-scheme:light;
+  }
+  .topnav,.topbar-actions,.row-actions,.no-print{display:none!important}
+  body{background:#fff}
+  .card{box-shadow:none;border:1px solid #ddd}
+}
+@media print{
+  body.receipt-print .topnav,body.receipt-print .app{display:none!important}
+  body.receipt-print #modalBg{display:block!important;position:static;background:none;backdrop-filter:none;padding:0}
+  body.receipt-print .modal{box-shadow:none;width:100%;max-width:420px;max-height:none;animation:none;padding:0;margin:0 auto}
+  body.receipt-print .modal-actions{display:none!important}
+  body.receipt-print .receipt{background:#fff}
+}
+@media(max-width:1080px){
+  .burger{display:flex}
+  .nav-links{
+    display:none;position:absolute;top:calc(100% + 1px);left:0;right:0;
+    background:var(--card);flex-direction:column;align-items:stretch;
+    padding:12px;border-bottom:1px solid var(--line);box-shadow:var(--shadow);
+    justify-content:flex-start;gap:4px;
+  }
+  .nav-links.open{display:flex;animation:mpop .18s ease}
+  .nav-links .nav-btn{width:100%;justify-content:flex-start;border-radius:12px;padding:12px 14px}
+  .nav-status{display:none}
+  .grid-4{grid-template-columns:1fr 1fr}
+  .grid-3{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .grid-4,.grid-3,.grid-2{grid-template-columns:1fr}
+  .main{padding:18px 14px 32px}
+  .topbar{flex-direction:column;align-items:flex-start}
+  .topbar-actions{width:100%}
+  .search{flex:1;min-width:0}
+  .modal{padding:20px}
+  #stTable,#teTable,#paTable,#exTable{overflow-x:auto}
+  #stTable table,#teTable table,#paTable table,#exTable table{min-width:620px}
+  td,th{padding:9px 8px;font-size:.86rem}
+  .brand b{font-size:.9rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ FIRST-RUN / FILE SETUP ============ -->
+<div class="setup" id="setupOverlay" style="display:none">
+  <div class="setup-card">
+    <div class="brand-mark">SU</div>
+    <h1>SpeakUp English</h1>
+    <p id="setupMsg" data-t="setup_msg">Welcome! Choose where your school data will be saved on this computer, or restore from a backup file.</p>
+    <button class="btn btn-primary" id="setupNewBtn" data-t="setup_new">📁 Choose save location (new school)</button>
+    <button class="btn btn-ghost" id="setupOpenBtn" data-t="setup_open">📂 Open existing data file</button>
+    <button class="btn btn-ghost" id="setupSkipBtn" data-t="setup_skip">Continue without a file (browser only)</button>
+  </div>
+</div>
+
+<!-- ============ TOP NAVBAR ============ -->
+<header class="topnav no-print">
+  <div class="topnav-inner">
+    <div class="brand">
+      <div class="brand-mark">SU</div>
+      <div><b>SpeakUp English</b><span data-t="by">by MK Core</span></div>
+    </div>
+    <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    <nav class="nav-links" id="navLinks">
+      <button class="nav-btn active" data-nav="dashboard"><span class="nav-icon">▦</span><span data-t="nav_dash">Dashboard</span></button>
+      <button class="nav-btn" data-nav="students"><span class="nav-icon">🎓</span><span data-t="nav_students">Students</span></button>
+      <button class="nav-btn" data-nav="classes"><span class="nav-icon">🏫</span><span data-t="nav_classes">Classes</span></button>
+      <button class="nav-btn" data-nav="teachers"><span class="nav-icon">👩‍🏫</span><span data-t="nav_teachers">Teachers</span></button>
+      <button class="nav-btn" data-nav="schedule"><span class="nav-icon">📅</span><span data-t="nav_schedule">Schedule</span></button>
+      <button class="nav-btn" data-nav="grades"><span class="nav-icon">📝</span><span data-t="nav_grades">Grades</span></button>
+      <button class="nav-btn" data-nav="payments"><span class="nav-icon">💳</span><span data-t="nav_payments">Payments</span></button>
+      <button class="nav-btn" data-nav="expenses"><span class="nav-icon">🧾</span><span data-t="nav_expenses">Expenses</span></button>
+      <button class="nav-btn" data-nav="revenue"><span class="nav-icon">📈</span><span data-t="nav_revenue">Revenue</span></button>
+      <button class="nav-btn" data-nav="settings"><span class="nav-icon">⚙</span><span data-t="nav_settings">Settings</span></button>
+    </nav>
+    <button class="theme-btn no-print" id="themeBtn" aria-label="Theme" title="Light / Dark">🌙</button>
+    <div class="nav-status">
+      <span class="save-dot" id="saveDot"></span><span id="saveStatus" data-t="saved">Saved</span>
+    </div>
+  </div>
+</header>
+
+<div class="app">
+
+  <!-- ============ MAIN ============ -->
+  <main class="main">
+
+    <!-- ===== DASHBOARD ===== -->
+    <section class="page active" id="page-dashboard">
+      <div class="topbar">
+        <h1 data-t="dash_title">Dashboard</h1>
+        <div class="topbar-actions"><span style="color:var(--muted);font-weight:600" id="todayLabel"></span></div>
+      </div>
+      <div class="grid grid-4" style="margin-bottom:18px">
+        <div class="card stat-card hero"><div class="stat-icon">🎓</div><div class="lbl" data-t="d_students">Students</div><div class="num" id="dStudents">0</div></div>
+        <div class="card stat-card"><div class="stat-icon">🏫</div><div class="lbl" data-t="d_classes">Classes</div><div class="num" id="dClasses">0</div></div>
+        <div class="card stat-card"><div class="stat-icon">👩‍🏫</div><div class="lbl" data-t="d_teachers">Teachers</div><div class="num" id="dTeachers">0</div></div>
+        <div class="card stat-card"><div class="stat-icon">⚠️</div><div class="lbl" data-t="d_unpaid">Unpaid this month</div><div class="num" id="dUnpaid" style="color:var(--red)">0</div></div>
+      </div>
+      <div id="dBirthdays" style="margin-bottom:18px"></div>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 style="margin-bottom:14px" data-t="d_today">Today's teachers</h3>
+          <div id="dToday"></div>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:14px" data-t="d_unpaid_list">Unpaid students — this month</h3>
+          <div id="dUnpaidList"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STUDENTS ===== -->
+    <section class="page" id="page-students">
+      <div class="topbar">
+        <h1 data-t="st_title">Students</h1>
+        <div class="topbar-actions">
+          <div class="search">🔍<input id="stSearch" data-t-ph="search_ph" placeholder="Search name…"></div>
+          <select class="ctrl" id="stClassFilter"></select>
+          <select class="ctrl" id="stStatus">
+            <option value="active" data-t="active">Active</option>
+            <option value="archived" data-t="archived">Archived</option>
+          </select>
+          <button class="btn btn-ghost btn-sm" id="stCsvBtn" data-t="export_csv">⬇ CSV</button>
+          <button class="btn btn-ghost btn-sm" onclick="window.print()" data-t="print">🖨 Print</button>
+          <button class="btn btn-primary" id="stAddBtn" data-t="st_add">+ Add student</button>
+        </div>
+      </div>
+      <div class="card"><div id="stTable"></div></div>
+    </section>
+
+    <!-- ===== CLASSES ===== -->
+    <section class="page" id="page-classes">
+      <div class="topbar">
+        <h1 data-t="cl_title">Classes</h1>
+        <div class="topbar-actions"><button class="btn btn-primary" id="clAddBtn" data-t="cl_add">+ Add class</button></div>
+      </div>
+      <div class="grid grid-2" id="clGrid"></div>
+    </section>
+
+    <!-- ===== TEACHERS ===== -->
+    <section class="page" id="page-teachers">
+      <div class="topbar">
+        <h1 data-t="te_title">Teachers</h1>
+        <div class="topbar-actions">
+          <button class="btn btn-ghost btn-sm" onclick="window.print()" data-t="print">🖨 Print</button>
+          <button class="btn btn-primary" id="teAddBtn" data-t="te_add">+ Add teacher</button>
+        </div>
+      </div>
+      <div class="card"><div id="teTable"></div></div>
+    </section>
+
+    <!-- ===== SCHEDULE ===== -->
+    <section class="page" id="page-schedule">
+      <div class="topbar">
+        <h1 data-t="sch_title">Weekly Schedule</h1>
+        <div class="topbar-actions">
+          <button class="btn btn-ghost btn-sm" id="schPrev" aria-label="Previous week">‹</button>
+          <span style="font-weight:700;min-width:150px;text-align:center" id="schLabel"></span>
+          <button class="btn btn-ghost btn-sm" id="schNext" aria-label="Next week">›</button>
+          <button class="btn btn-ghost btn-sm" id="schToday" data-t="sch_this_week" style="display:none">This week</button>
+          <button class="btn btn-ghost btn-sm" id="schRoomsBtn" data-t="ro_btn">🚪 Classrooms</button>
+          <button class="btn btn-ghost btn-sm" onclick="window.print()" data-t="print">🖨 Print</button>
+        </div>
+      </div>
+      <div class="sch-grid" id="schGrid"></div>
+    </section>
+
+    <!-- ===== GRADES ===== -->
+    <section class="page" id="page-grades">
+      <div class="topbar">
+        <h1 data-t="gr_title">Grades</h1>
+        <div class="topbar-actions">
+          <select class="ctrl" id="grClass"></select>
+          <select class="ctrl" id="grScale" title="Scale">
+            <option value="20">/20</option>
+            <option value="10">/10</option>
+            <option value="100">/100</option>
+          </select>
+          <button class="btn btn-ghost btn-sm" onclick="window.print()" data-t="print">🖨 Print</button>
+          <button class="btn btn-primary" id="grAddTest" data-t="gr_add_test">+ Add test</button>
+        </div>
+      </div>
+      <div class="card"><div id="grTable"></div></div>
+    </section>
+
+    <!-- ===== PAYMENTS ===== -->
+    <section class="page" id="page-payments">
+      <div class="topbar">
+        <h1 data-t="pa_title">Payments</h1>
+        <div class="topbar-actions">
+          <div class="search">🔍<input id="paSearch" data-t-ph="search_ph" placeholder="Search name…"></div>
+          <select class="ctrl" id="paTab">
+            <option value="fees" data-t="pa_fees">Student fees</option>
+            <option value="salaries" data-t="pa_salaries">Teacher salaries</option>
+          </select>
+          <input type="month" class="ctrl" id="paMonth">
+          <select class="ctrl" id="paFilter">
+            <option value="all" data-t="pa_all">All</option>
+            <option value="unpaid" data-t="pa_only_unpaid">Unpaid only</option>
+            <option value="paid" data-t="pa_only_paid">Paid only</option>
+          </select>
+          <button class="btn btn-ghost btn-sm" onclick="window.print()" data-t="print">🖨 Print</button>
+        </div>
+      </div>
+      <div class="card"><div id="paTable"></div></div>
+    </section>
+
+    <!-- ===== EXPENSES ===== -->
+    <section class="page" id="page-expenses">
+      <div class="topbar">
+        <h1 data-t="ex_title">Expenses</h1>
+        <div class="topbar-actions">
+          <input type="month" class="ctrl" id="exMonth">
+          <button class="btn btn-ghost btn-sm" onclick="window.print()" data-t="print">🖨 Print</button>
+          <button class="btn btn-primary" id="exAddBtn" data-t="ex_add">+ Add expense</button>
+        </div>
+      </div>
+      <div class="card"><div id="exTable"></div></div>
+    </section>
+
+    <!-- ===== REVENUE ===== -->
+    <section class="page" id="page-revenue">
+      <div class="topbar">
+        <h1 data-t="re_title">Revenue</h1>
+        <div class="topbar-actions">
+          <select class="ctrl" id="rePeriod">
+            <option value="month" data-t="per_month">Month</option>
+            <option value="quarter" data-t="per_quarter">Quarter</option>
+            <option value="year" data-t="per_year">Year</option>
+          </select>
+          <input type="month" class="ctrl" id="reMonth">
+        </div>
+      </div>
+      <div class="grid grid-4" style="margin-bottom:18px">
+        <div class="card stat-card"><div class="stat-icon">⬇</div><div class="lbl" data-t="re_in">Fees collected</div><div class="num" id="reIn" style="color:var(--green)">0</div></div>
+        <div class="card stat-card"><div class="stat-icon">⬆</div><div class="lbl" data-t="re_out">Salaries paid</div><div class="num" id="reOut" style="color:var(--red)">0</div></div>
+        <div class="card stat-card"><div class="stat-icon">🧾</div><div class="lbl" data-t="re_exp">Other expenses</div><div class="num" id="reExp" style="color:var(--amber)">0</div></div>
+        <div class="card stat-card hero"><div class="stat-icon">＝</div><div class="lbl" id="reNetLbl">Net this month</div><div class="num" id="reNet">0</div></div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:10px" id="reChartLbl">Last 6 months</h3>
+        <div class="legend"><span><i style="background:var(--teal)"></i><span data-t="re_in">Fees collected</span></span><span><i style="background:var(--bar2)"></i><span data-t="re_spend">Total spending</span></span></div>
+        <div class="bars" id="reBars"></div>
+      </div>
+    </section>
+
+    <!-- ===== SETTINGS ===== -->
+    <section class="page" id="page-settings">
+      <div class="topbar"><h1 data-t="se_title">Settings & Backup</h1></div>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 style="margin-bottom:14px" data-t="se_general">General</h3>
+          <div class="field">
+            <label data-t="se_lang">Language</label>
+            <select id="seLang"><option value="en">English</option><option value="fr">Français</option></select>
+          </div>
+          <div class="field">
+            <label data-t="se_fee">Default monthly fee (per student)</label>
+            <input type="number" id="seFee" min="0">
+          </div>
+          <div class="field">
+            <label data-t="se_currency">Currency label</label>
+            <input type="text" id="seCurrency" placeholder="DA / € / $">
+          </div>
+          <div class="fieldset-title" data-t="se_school">School details (shown on receipts)</div>
+          <div class="field">
+            <label data-t="se_phone">School phone</label>
+            <input type="text" id="sePhone">
+          </div>
+          <div class="field">
+            <label data-t="se_address">School address</label>
+            <input type="text" id="seAddress">
+          </div>
+          <button class="btn btn-primary" id="seSaveBtn" data-t="save">Save</button>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:14px" data-t="se_data">Your data</h3>
+          <p style="color:var(--muted);font-size:.9rem;margin-bottom:16px" data-t="se_data_msg">Data auto-saves to your chosen file and to this browser. Download a backup regularly and keep a copy on a USB drive.</p>
+          <p style="font-size:.85rem;margin-bottom:8px"><b data-t="se_file">Data file:</b> <span id="seFileName" style="color:var(--muted)">—</span></p>
+          <p style="font-size:.85rem;margin-bottom:16px"><b data-t="last_backup">Last backup:</b> <span id="seLastBackup" style="color:var(--muted)">—</span></p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn btn-primary" id="seBackupBtn" data-t="se_backup">⬇ Download backup</button>
+            <button class="btn btn-ghost" id="seRestoreBtn" data-t="se_restore">⬆ Restore from backup</button>
+            <button class="btn btn-ghost" id="seFileBtn" data-t="se_pickfile">📁 Change data file</button>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)">
+            <button class="btn btn-ghost btn-sm" id="seDemoBtn" data-t="demo_load">🧪 Load demo data</button>
+            <button class="btn btn-ghost btn-sm" id="seWipeBtn" data-t="demo_wipe" style="color:var(--red)">🗑 Wipe all data</button>
+          </div>
+          <input type="file" id="seRestoreInput" accept=".json" style="display:none">
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-bg" id="modalBg"><div class="modal" id="modalBox"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ================================================================
+   SpeakUp English — School Manager · by MK Core
+   Single-file offline app. Data: chosen file (Chrome/Edge) + localStorage.
+================================================================ */
+
+/* ============ TRANSLATIONS ============ */
+const T = {
+en:{
+  by:"by MK Core", saved:"Saved", saving:"Saving…", browser_only:"Browser only",
+  nav_dash:"Dashboard",nav_students:"Students",nav_classes:"Classes",nav_teachers:"Teachers",
+  nav_payments:"Payments",nav_revenue:"Revenue",nav_settings:"Settings & Backup",
+  setup_msg:"Welcome! Choose where your school data will be saved on this computer, or restore from a backup file.",
+  setup_new:"📁 Choose save location (new school)",setup_open:"📂 Open existing data file",
+  setup_skip:"Continue without a file (browser only)",
+  dash_title:"Dashboard",d_students:"Students",d_classes:"Classes",d_teachers:"Teachers",
+  d_unpaid:"Unpaid this month",d_today:"Today's teachers",d_unpaid_list:"Students behind on payments",
+  none_today:"No teachers scheduled today.",all_paid:"Everyone has paid this month 🎉",
+  st_title:"Students",st_add:"+ Add student",search_ph:"Search name…",all_classes:"All classes",
+  th_name:"Name",th_class:"Class",th_parent:"Parent (emergency)",th_phone:"Phone",th_emergency:"Emergency",
+  th_status:"This month",th_actions:"",edit:"Edit",del:"Delete",f_phone:"Phone",
+  no_students:"No students yet. Click “+ Add student” to begin.",
+  st_modal_add:"Add student",st_modal_edit:"Edit student",
+  f_fullname:"Full name",f_dob:"Date of birth",f_class:"Class",
+  f_stphone:"Student phone",f_parent:"Parent / guardian name",
+  f_parent_phone:"Parent phone (emergency contact)",
+  th_stphone:"Student phone",
+  f_notes:"Notes (allergies, special info…)",f_fee:"Monthly fee",
+  cancel:"Cancel",save:"Save",
+  cl_title:"Classes",cl_add:"+ Add class",cl_students:"students",cl_none:"No classes yet.",cl_collected:"of fees collected this month",
+  cl_modal_add:"Add class",cl_modal_edit:"Edit class",f_classname:"Class name",
+  cl_del_warn:"Students in this class will become unassigned.",
+  te_title:"Teachers",te_add:"+ Add teacher",th_subject:"Subject",th_schedule:"Work schedule",th_salary:"Salary",
+  no_teachers:"No teachers yet.",te_modal_add:"Add teacher",te_modal_edit:"Edit teacher",
+  f_subject:"Subject / role",f_salary:"Monthly salary",f_schedule:"Work schedule",add_slot:"+ Add time slot",
+  day_mon:"Monday",day_tue:"Tuesday",day_wed:"Wednesday",day_thu:"Thursday",day_fri:"Friday",day_sat:"Saturday",day_sun:"Sunday",
+  pa_title:"Payments",pa_fees:"Student fees",pa_salaries:"Teacher salaries",
+  pa_all:"All",pa_only_unpaid:"Unpaid only",pa_only_paid:"Paid only",
+  paid:"Paid",unpaid:"Unpaid",mark_paid:"Mark paid",mark_unpaid:"Undo",
+  partial:"Partial",pay_btn:"+ Payment",pay_amount:"Amount received",
+  pay_remaining:"Remaining",undo_last:"Undo last payment",pa_history:"Payments this month",
+  archive:"Archive",restore:"Restore",archived:"Archived",active:"Active",
+  st_status:"Status",f_joined:"Registration date",not_due:"—",
+  export_csv:"⬇ CSV",se_school:"School details (shown on receipts)",
+  se_phone:"School phone",se_address:"School address",
+  arch_warn:"Archive this student? Their history and receipts are kept.",
+  pa_empty:"Nothing to show for this filter.",amount:"Amount",
+  re_title:"Revenue",re_in:"Fees collected",re_out:"Salaries paid",
+  per_month:"Month",per_quarter:"Quarter",per_year:"Year",
+  re_net_month:"Net this month",re_net_quarter:"Net this quarter",re_net_year:"Net this year",
+  chart_months:"Last 6 months",chart_year:"Year",re_net:"Net this month",re_chart:"Last 6 months",
+  se_title:"Settings & Backup",se_general:"General",se_lang:"Language",
+  se_fee:"Default monthly fee (per student)",se_currency:"Currency label",
+  se_data:"Your data",se_data_msg:"Data auto-saves to your chosen file and to this browser. Download a backup regularly and keep a copy on a USB drive.",
+  se_file:"Data file:",se_backup:"⬇ Download backup",se_restore:"⬆ Restore from backup",se_pickfile:"📁 Change data file",
+  no_file:"none — browser storage only",
+  t_saved:"Saved ✓",t_settings:"Settings saved",t_backup:"Backup downloaded",
+  t_restored:"Backup restored",t_restore_err:"Could not read that file",
+  t_file_ok:"Data file connected — auto-saving",t_deleted:"Deleted",
+  confirm_del:"Delete this? This cannot be undone.",
+  reconnect:"Click to reconnect your data file",print:"🖨 Print",
+  unassigned:"Unassigned",
+  nav_expenses:"Expenses",ex_title:"Expenses",ex_add:"+ Add expense",
+  th_label:"Description",th_category:"Category",
+  no_expenses:"No expenses recorded for this month.",
+  ex_modal_add:"Add expense",ex_modal_edit:"Edit expense",
+  f_label:"Description (rent, supplies…)",f_category:"Category",f_amount:"Amount",f_month:"Month",
+  cat_rent:"Rent",cat_supplies:"Supplies",cat_utilities:"Utilities (electricity, water…)",
+  cat_maintenance:"Maintenance",cat_other:"Other",
+  ex_total:"Total this month",re_exp:"Other expenses",re_spend:"Total spending",
+  f_photo:"📷 Choose photo",remove_photo:"Remove photo",
+  receipt:"Receipt",rec_from:"Received from",rec_to:"Paid to",
+  rec_month:"For month",rec_sign:"Signature",close:"Close",
+  nav_schedule:"Schedule",sch_title:"Weekly Schedule",
+  sch_none:"No sessions. Add work schedules to your teachers and they'll appear here.",
+  sch_free:"Free day",sch_this_week:"This week",
+  ov_cancel:"Cancel this session",ov_restore:"Restore session",ov_cancelled:"Cancelled",
+  ov_note:"Reason / note (optional)",ov_extra_title:"One-time session",
+  ov_del:"Delete this session",f_teacher:"Teacher",sch_session:"Session",f_from:"From",f_to:"To",
+  ev_type_session:"Session",ev_type_event:"⭐ Event",ev_title_lbl:"Event title (e.g. Speaking Club)",
+  f_host:"Host",host_guest:"Guest…",f_guest:"Guest name",
+  ev_repeat:"Repeats",rep_once:"Just this date",rep_weekly:"Every week",
+  ev_badge:"Event",ev_del_series:"Delete event (every week)",ev_del:"Delete event",
+  ev_cancel_date:"Cancel for this date",
+  nav_grades:"Grades",gr_title:"Grades",gr_pick_class:"Select a class:",
+  gr_scale:"Scale",gr_add_test:"+ Add test",gr_no_classes:"Add a class first (Classes page).",
+  gr_no_tests:"No tests yet. Click \u201c+ Add test\u201d to create the first column.",
+  gr_no_students:"No students in this class yet.",
+  gr_avg:"Average",gr_result:"Result",gr_pass:"Pass",gr_fail:"Fail",
+  gr_passrate:"Class pass rate",gr_test_name:"Test name",gr_test_modal:"Add test",
+  gr_test_edit:"Edit test",f_scale:"Grade scale (max)",gr_del_test:"Delete this test column?",
+  gr_class_avg:"Class average",
+  ro_btn:"🚪 Classrooms",ro_title:"Classrooms",ro_add:"+ Add classroom",f_roomname:"Classroom name",
+  f_room:"Classroom",ro_none:"No classrooms yet. Add your rooms to detect schedule conflicts.",
+  conflict:"Room conflict!",conflict_with:"already booked by",
+  bday:"🎂 Birthdays this week",bday_today:"today!",
+  owes:"owes",owes_months:"months",
+  fee_warn:"Note: fee changed after payments this month — check the remaining amount.",
+  copied:"Copied ✓",
+  last_backup:"Last backup:",days_ago:"days ago",never:"never",
+  auto_backup:"Monthly automatic backup downloaded ✓",
+  ov_cancel_day:"Cancel teacher's whole day",
+  ro_usage:"Weekly room usage",ro_free:"free all week",
+  demo_load:"🧪 Load demo data",demo_wipe:"🗑 Wipe all data",
+  demo_warn:"Replace ALL current data with demo data?",
+  wipe_warn:"Erase ALL data? Download a backup first if you need it.",
+  demo_done:"Demo data loaded",wipe_done:"All data wiped",
+  backup_reminder:"Reminder: it's been a while — download a backup from Settings!"
+},
+fr:{
+  by:"par MK Core", saved:"Enregistré", saving:"Enregistrement…", browser_only:"Navigateur seul",
+  nav_dash:"Tableau de bord",nav_students:"Élèves",nav_classes:"Classes",nav_teachers:"Enseignants",
+  nav_payments:"Paiements",nav_revenue:"Revenus",nav_settings:"Paramètres & Sauvegarde",
+  setup_msg:"Bienvenue ! Choisissez où enregistrer les données de l'école sur cet ordinateur, ou restaurez une sauvegarde.",
+  setup_new:"📁 Choisir l'emplacement (nouvelle école)",setup_open:"📂 Ouvrir un fichier existant",
+  setup_skip:"Continuer sans fichier (navigateur seul)",
+  dash_title:"Tableau de bord",d_students:"Élèves",d_classes:"Classes",d_teachers:"Enseignants",
+  d_unpaid:"Impayés ce mois",d_today:"Enseignants aujourd'hui",d_unpaid_list:"Élèves en retard de paiement",
+  none_today:"Aucun enseignant prévu aujourd'hui.",all_paid:"Tout le monde a payé ce mois 🎉",
+  st_title:"Élèves",st_add:"+ Ajouter un élève",search_ph:"Rechercher un nom…",all_classes:"Toutes les classes",
+  th_name:"Nom",th_class:"Classe",th_parent:"Parent (urgence)",th_phone:"Téléphone",th_emergency:"Urgence",
+  th_status:"Ce mois",th_actions:"",edit:"Modifier",del:"Supprimer",f_phone:"Téléphone",
+  no_students:"Aucun élève. Cliquez sur « + Ajouter un élève » pour commencer.",
+  st_modal_add:"Ajouter un élève",st_modal_edit:"Modifier l'élève",
+  f_fullname:"Nom complet",f_dob:"Date de naissance",f_class:"Classe",
+  f_stphone:"Téléphone de l'élève",f_parent:"Nom du parent / tuteur",
+  f_parent_phone:"Téléphone du parent (contact d'urgence)",
+  th_stphone:"Tél. élève",
+  f_notes:"Notes (allergies, infos spéciales…)",f_fee:"Frais mensuels",
+  cancel:"Annuler",save:"Enregistrer",
+  cl_title:"Classes",cl_add:"+ Ajouter une classe",cl_students:"élèves",cl_none:"Aucune classe.",cl_collected:"des frais encaissés ce mois",
+  cl_modal_add:"Ajouter une classe",cl_modal_edit:"Modifier la classe",f_classname:"Nom de la classe",
+  cl_del_warn:"Les élèves de cette classe deviendront non assignés.",
+  te_title:"Enseignants",te_add:"+ Ajouter un enseignant",th_subject:"Matière",th_schedule:"Horaires",th_salary:"Salaire",
+  no_teachers:"Aucun enseignant.",te_modal_add:"Ajouter un enseignant",te_modal_edit:"Modifier l'enseignant",
+  f_subject:"Matière / rôle",f_salary:"Salaire mensuel",f_schedule:"Horaires de travail",add_slot:"+ Ajouter un créneau",
+  day_mon:"Lundi",day_tue:"Mardi",day_wed:"Mercredi",day_thu:"Jeudi",day_fri:"Vendredi",day_sat:"Samedi",day_sun:"Dimanche",
+  pa_title:"Paiements",pa_fees:"Frais des élèves",pa_salaries:"Salaires des enseignants",
+  pa_all:"Tous",pa_only_unpaid:"Impayés seulement",pa_only_paid:"Payés seulement",
+  paid:"Payé",unpaid:"Impayé",mark_paid:"Marquer payé",mark_unpaid:"Annuler",
+  partial:"Partiel",pay_btn:"+ Paiement",pay_amount:"Montant reçu",
+  pay_remaining:"Restant",undo_last:"Annuler le dernier paiement",pa_history:"Paiements ce mois",
+  archive:"Archiver",restore:"Rétablir",archived:"Archivés",active:"Actifs",
+  st_status:"Statut",f_joined:"Date d'inscription",not_due:"—",
+  export_csv:"⬇ CSV",se_school:"Coordonnées de l'école (sur les reçus)",
+  se_phone:"Téléphone de l'école",se_address:"Adresse de l'école",
+  arch_warn:"Archiver cet élève ? Son historique et ses reçus sont conservés.",
+  pa_empty:"Rien à afficher pour ce filtre.",amount:"Montant",
+  re_title:"Revenus",re_in:"Frais encaissés",re_out:"Salaires versés",
+  per_month:"Mois",per_quarter:"Trimestre",per_year:"Année",
+  re_net_month:"Net ce mois",re_net_quarter:"Net ce trimestre",re_net_year:"Net cette année",
+  chart_months:"6 derniers mois",chart_year:"Année",re_net:"Net ce mois",re_chart:"6 derniers mois",
+  se_title:"Paramètres & Sauvegarde",se_general:"Général",se_lang:"Langue",
+  se_fee:"Frais mensuels par défaut (par élève)",se_currency:"Devise",
+  se_data:"Vos données",se_data_msg:"Les données s'enregistrent automatiquement dans votre fichier et dans ce navigateur. Téléchargez régulièrement une sauvegarde sur une clé USB.",
+  se_file:"Fichier de données :",se_backup:"⬇ Télécharger une sauvegarde",se_restore:"⬆ Restaurer une sauvegarde",se_pickfile:"📁 Changer de fichier",
+  no_file:"aucun — navigateur seulement",
+  t_saved:"Enregistré ✓",t_settings:"Paramètres enregistrés",t_backup:"Sauvegarde téléchargée",
+  t_restored:"Sauvegarde restaurée",t_restore_err:"Impossible de lire ce fichier",
+  t_file_ok:"Fichier connecté — enregistrement auto",t_deleted:"Supprimé",
+  confirm_del:"Supprimer ? Cette action est définitive.",
+  reconnect:"Cliquez pour reconnecter votre fichier de données",print:"🖨 Imprimer",
+  unassigned:"Non assigné",
+  nav_expenses:"Dépenses",ex_title:"Dépenses",ex_add:"+ Ajouter une dépense",
+  th_label:"Description",th_category:"Catégorie",
+  no_expenses:"Aucune dépense enregistrée pour ce mois.",
+  ex_modal_add:"Ajouter une dépense",ex_modal_edit:"Modifier la dépense",
+  f_label:"Description (loyer, fournitures…)",f_category:"Catégorie",f_amount:"Montant",f_month:"Mois",
+  cat_rent:"Loyer",cat_supplies:"Fournitures",cat_utilities:"Charges (électricité, eau…)",
+  cat_maintenance:"Entretien",cat_other:"Autre",
+  ex_total:"Total ce mois",re_exp:"Autres dépenses",re_spend:"Dépenses totales",
+  f_photo:"📷 Choisir une photo",remove_photo:"Retirer la photo",
+  receipt:"Reçu",rec_from:"Reçu de",rec_to:"Versé à",
+  rec_month:"Pour le mois",rec_sign:"Signature",close:"Fermer",
+  nav_schedule:"Emploi du temps",sch_title:"Emploi du temps hebdomadaire",
+  sch_none:"Aucune séance. Ajoutez des horaires à vos enseignants et ils apparaîtront ici.",
+  sch_free:"Jour libre",sch_this_week:"Cette semaine",
+  ov_cancel:"Annuler cette séance",ov_restore:"Rétablir la séance",ov_cancelled:"Annulée",
+  ov_note:"Motif / note (facultatif)",ov_extra_title:"Séance ponctuelle",
+  ov_del:"Supprimer cette séance",f_teacher:"Enseignant",sch_session:"Séance",f_from:"De",f_to:"À",
+  ev_type_session:"Séance",ev_type_event:"⭐ Événement",ev_title_lbl:"Titre de l'événement (ex. Speaking Club)",
+  f_host:"Animateur",host_guest:"Invité…",f_guest:"Nom de l'invité",
+  ev_repeat:"Répétition",rep_once:"Cette date seulement",rep_weekly:"Chaque semaine",
+  ev_badge:"Événement",ev_del_series:"Supprimer l'événement (chaque semaine)",ev_del:"Supprimer l'événement",
+  ev_cancel_date:"Annuler pour cette date",
+  nav_grades:"Notes",gr_title:"Notes",gr_pick_class:"Choisir une classe :",
+  gr_scale:"Bar\u00e8me",gr_add_test:"+ Ajouter un test",gr_no_classes:"Ajoutez d’abord une classe (page Classes).",
+  gr_no_tests:"Aucun test. Cliquez sur \u00ab + Ajouter un test \u00bb pour cr\u00e9er la premi\u00e8re colonne.",
+  gr_no_students:"Aucun \u00e9l\u00e8ve dans cette classe.",
+  gr_avg:"Moyenne",gr_result:"R\u00e9sultat",gr_pass:"Admis",gr_fail:"\u00c9chec",
+  gr_passrate:"Taux de r\u00e9ussite",gr_test_name:"Nom du test",gr_test_modal:"Ajouter un test",
+  gr_test_edit:"Modifier le test",f_scale:"Bar\u00e8me (max)",gr_del_test:"Supprimer cette colonne de test ?",
+  gr_class_avg:"Moyenne de la classe",
+  ro_btn:"🚪 Salles",ro_title:"Salles de classe",ro_add:"+ Ajouter une salle",f_roomname:"Nom de la salle",
+  f_room:"Salle",ro_none:"Aucune salle. Ajoutez vos salles pour détecter les conflits d’horaires.",
+  conflict:"Conflit de salle !",conflict_with:"déjà réservée par",
+  bday:"🎂 Anniversaires cette semaine",bday_today:"aujourd'hui !",
+  owes:"doit",owes_months:"mois",
+  fee_warn:"Attention : frais modifiés après des paiements ce mois — vérifiez le restant.",
+  copied:"Copié ✓",
+  last_backup:"Dernière sauvegarde :",days_ago:"jours",never:"jamais",
+  auto_backup:"Sauvegarde mensuelle automatique téléchargée ✓",
+  ov_cancel_day:"Annuler toute la journée de l'enseignant",
+  ro_usage:"Occupation hebdomadaire des salles",ro_free:"libre toute la semaine",
+  demo_load:"🧪 Charger des données de démo",demo_wipe:"🗑 Tout effacer",
+  demo_warn:"Remplacer TOUTES les données actuelles par la démo ?",
+  wipe_warn:"Effacer TOUTES les données ? Téléchargez d'abord une sauvegarde si besoin.",
+  demo_done:"Données de démo chargées",wipe_done:"Toutes les données effacées",
+  backup_reminder:"Rappel : pensez à télécharger une sauvegarde dans Paramètres !"
+}};
+const DAYS=["sat","sun","mon","tue","wed","thu","fri"]; /* Algerian week: Saturday first */
+function t(k){ return (T[S.settings.lang]||T.en)[k] || T.en[k] || k; }
+
+/* ============ STATE ============ */
+let S = {
+  students:[], classes:[], teachers:[], expenses:[], receipts:[], overrides:[], rooms:[], events:[], tests:[], grades:{}, classScale:{},
+  fees:{},      /* fees["2026-06"][studentId] = true */
+  salaries:{},  /* salaries["2026-06"][teacherId] = true */
+  settings:{ lang:"en", defaultFee:0, currency:"DA", lastBackup:0, receiptSeq:0 }
+};
+const uid = ()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const monthKey = d => d.toISOString().slice(0,7);
+let curMonth = monthKey(new Date());
+let payTab="fees", payFilter="all", stQuery="", stClass="all";
+
+/* ============ PERSISTENCE ============ */
+let fileHandle=null, saveTimer=null, dirty=false;
+
+/* tiny IndexedDB helper to remember the file handle between sessions */
+const idb={
+  db:null,
+  open(){return new Promise(res=>{
+    const r=indexedDB.open("speakup-fs",1);
+    r.onupgradeneeded=()=>r.result.createObjectStore("kv");
+    r.onsuccess=()=>{idb.db=r.result;res()};
+    r.onerror=()=>res();
+  })},
+  set(k,v){return new Promise(res=>{ if(!idb.db)return res();
+    const tx=idb.db.transaction("kv","readwrite");tx.objectStore("kv").put(v,k);tx.oncomplete=res;tx.onerror=res;})},
+  get(k){return new Promise(res=>{ if(!idb.db)return res(null);
+    const tx=idb.db.transaction("kv","readonly");const q=tx.objectStore("kv").get(k);
+    q.onsuccess=()=>res(q.result);q.onerror=()=>res(null);})}
+};
+
+function lsSave(){ try{localStorage.setItem("speakup-data",JSON.stringify(S))}catch(e){} }
+function lsLoad(){ try{const d=localStorage.getItem("speakup-data");return d?JSON.parse(d):null}catch(e){return null} }
+
+async function writeFile(){
+  if(!fileHandle) return false;
+  try{
+    const w=await fileHandle.createWritable();
+    await w.write(JSON.stringify(S,null,2));
+    await w.close();
+    return true;
+  }catch(e){ return false; }
+}
+function setSaveStatus(ok){
+  const dot=document.getElementById("saveDot"), st=document.getElementById("saveStatus");
+  if(fileHandle && ok){ dot.classList.remove("off"); st.textContent=t("saved"); }
+  else if(fileHandle && !ok){ dot.classList.add("off"); st.textContent=t("reconnect"); }
+  else { dot.classList.add("off"); st.textContent=t("browser_only"); }
+}
+function persist(){
+  dirty=true; lsSave();
+  document.getElementById("saveStatus").textContent=t("saving");
+  clearTimeout(saveTimer);
+  saveTimer=setTimeout(async()=>{
+    const ok=await writeFile();
+    setSaveStatus(ok); dirty=false;
+  },500);
+}
+
+async function pickFile(saveAs){
+  try{
+    if(saveAs){
+      fileHandle=await window.showSaveFilePicker({
+        suggestedName:"speakup-school-data.json",
+        types:[{description:"SpeakUp data",accept:{"application/json":[".json"]}}]
+      });
+      await writeFile();
+    }else{
+      const [h]=await window.showOpenFilePicker({
+        types:[{description:"SpeakUp data",accept:{"application/json":[".json"]}}]
+      });
+      fileHandle=h;
+      const f=await fileHandle.getFile();
+      const txt=await f.text();
+      if(txt.trim()){ const d=JSON.parse(txt); mergeState(d); }
+    }
+    await idb.set("handle",fileHandle);
+    updateFileLabel(); setSaveStatus(true);
+    toast(t("t_file_ok")); renderAll();
+    return true;
+  }catch(e){ return false; }
+}
+function updateFileLabel(){
+  document.getElementById("seFileName").textContent = fileHandle ? fileHandle.name : t("no_file");
+}
+function mergeState(d){
+  if(!d||typeof d!=="object") return;
+  S={ students:d.students||[], classes:d.classes||[], teachers:d.teachers||[],
+      expenses:d.expenses||[], receipts:d.receipts||[], overrides:d.overrides||[], rooms:d.rooms||[], events:d.events||[], tests:d.tests||[], grades:d.grades||{}, classScale:d.classScale||{},
+      fees:d.fees||{}, salaries:d.salaries||{},
+      settings:Object.assign({lang:"en",defaultFee:0,currency:"DA",lastBackup:0,receiptSeq:0}, d.settings||{}) };
+  /* migrate old student records: phone -> parentPhone, emergency merged into parent */
+  S.students.forEach(s=>{
+    if(s.parentPhone===undefined){
+      s.parentPhone = s.phone || s.emPhone || "";
+      if(!s.parent && s.emName) s.parent = s.emName;
+      s.studentPhone = s.studentPhone || "";
+      delete s.phone; delete s.emName; delete s.emPhone;
+    }
+  });
+  /* migrate fees: old boolean "paid" -> full fee amount */
+  Object.values(S.fees).forEach(monthObj=>{
+    Object.keys(monthObj).forEach(sid=>{
+      if(monthObj[sid]===true){
+        const s=S.students.find(x=>x.id===sid);
+        monthObj[sid]=s?((s.fee??S.settings.defaultFee)||0):0;
+      } else if(monthObj[sid]===false){ delete monthObj[sid]; }
+    });
+  });
+}
+
+/* try to restore the file handle from a previous session */
+async function tryReconnect(){
+  const h=await idb.get("handle");
+  if(!h) return;
+  fileHandle=h;
+  let perm=await h.queryPermission({mode:"readwrite"});
+  if(perm!=="granted"){
+    /* permission prompts require a user gesture — ask on first click */
+    setSaveStatus(false);
+    const once=async()=>{
+      perm=await h.requestPermission({mode:"readwrite"});
+      if(perm==="granted"){
+        try{ const f=await h.getFile(); const txt=await f.text();
+          if(txt.trim()) mergeState(JSON.parse(txt));
+        }catch(e){}
+        setSaveStatus(true); updateFileLabel(); renderAll(); toast(t("t_file_ok"));
+      }
+      document.removeEventListener("click",once,true);
+    };
+    document.addEventListener("click",once,true);
+  }else{
+    try{ const f=await h.getFile(); const txt=await f.text();
+      if(txt.trim()) mergeState(JSON.parse(txt));
+    }catch(e){}
+    setSaveStatus(true);
+  }
+  updateFileLabel();
+}
+
+/* ============ HELPERS ============ */
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+function esc(x){ return String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function toast(msg){
+  const el=$("#toast"); el.textContent=msg; el.classList.add("show");
+  setTimeout(()=>el.classList.remove("show"),2200);
+}
+function money(n){ return (Number(n)||0).toLocaleString()+" "+(S.settings.currency||""); }
+function className(id){ const c=S.classes.find(c=>c.id===id); return c?c.name:t("unassigned"); }
+function feeAmt(s){ return (s.fee??S.settings.defaultFee)||0; }
+function feePaidAmt(m,sid){ const v=S.fees[m]&&S.fees[m][sid]; return typeof v==="number"?v:(v?1e15:0); }
+function feeDue(s,m){ return !(s.joined && m < s.joined.slice(0,7)); }
+function feeStatus(s,m){
+  if(!feeDue(s,m)) return "notdue";
+  const fee=feeAmt(s), paid=feePaidAmt(m,s.id);
+  if(fee<=0) return "paid";
+  if(paid>=fee) return "paid";
+  if(paid>0) return "partial";
+  return "unpaid";
+}
+function feePaid(m,sid){ const s=S.students.find(x=>x.id===sid); return s?feeStatus(s,m)==="paid":false; }
+function salPaid(m,tid){ return !!(S.salaries[m]&&S.salaries[m][tid]); }
+
+/* how many months (since registration, up to now) are not fully paid */
+function owedMonths(s){ return owedMonthsList(s).length; }
+/* list of owed months with their status, oldest first */
+function owedMonthsList(s){
+  if(s.archived) return [];
+  const now=monthKey(new Date());
+  let m=(s.joined||now).slice(0,7);
+  if(m>now) return [];
+  const out=[]; let guard=0;
+  while(m<=now && guard<240){
+    const st=feeStatus(s,m);
+    if(st==="unpaid"||st==="partial") out.push({m,st});
+    const d=new Date(m+"-15"); d.setMonth(d.getMonth()+1); m=monthKey(d);
+    guard++;
+  }
+  return out;
+}
+function shortMonth(m){
+  const d=new Date(m+"-15");
+  const lbl=d.toLocaleDateString(S.settings.lang==="fr"?"fr-FR":"en-GB",{month:"short"});
+  return d.getFullYear()===new Date().getFullYear() ? lbl : lbl+" "+String(d.getFullYear()).slice(2);
+}
+/* birthdays within the next 7 days (including today) */
+function upcomingBirthdays(){
+  const out=[];
+  const today=new Date(); today.setHours(0,0,0,0);
+  S.students.forEach(s=>{
+    if(s.archived||!s.dob) return;
+    const dob=new Date(s.dob+"T12:00");
+    if(isNaN(dob)) return;
+    let next=new Date(today.getFullYear(),dob.getMonth(),dob.getDate());
+    if(next<today) next.setFullYear(next.getFullYear()+1);
+    const diff=Math.round((next-today)/86400000);
+    if(diff>=0&&diff<=7) out.push({s,diff,date:next});
+  });
+  out.sort((a,b)=>a.diff-b.diff);
+  return out;
+}
+window.copyTxt=function(txt){
+  if(!txt) return;
+  const done=()=>toast(t("copied"));
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(done).catch(()=>{});
+  }else{
+    const ta=document.createElement("textarea"); ta.value=txt;
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); done(); }catch(e){}
+    ta.remove();
+  }
+};
+
+/* avatar: photo if present, otherwise teal initials circle */
+function avatar(p,lg){
+  const cls = lg ? " avatar-lg" : "";
+  if(p&&p.photo) return `<img class="avatar${cls}" src="${p.photo}" alt="">`;
+  const ini=(p&&p.name||"?").trim().split(/\s+/).map(w=>w[0]||"").slice(0,2).join("").toUpperCase()||"?";
+  return `<span class="avatar-fb${cls}">${esc(ini)}</span>`;
+}
+/* photo picker: crop square + shrink to 240px JPEG so the data file stays small */
+let pendingPhoto; /* undefined = unchanged · null = removed · string = new photo */
+window.handlePhoto=function(input){
+  const f=input.files[0]; if(!f) return;
+  const img=new Image();
+  img.onload=()=>{
+    const c=document.createElement("canvas"); c.width=c.height=240;
+    const s=Math.min(img.width,img.height);
+    c.getContext("2d").drawImage(img,(img.width-s)/2,(img.height-s)/2,s,s,0,0,240,240);
+    pendingPhoto=c.toDataURL("image/jpeg",.82);
+    const prev=document.getElementById("m_photo_prev");
+    if(prev) prev.innerHTML=`<img class="avatar avatar-lg" src="${pendingPhoto}" alt="">`;
+    URL.revokeObjectURL(img.src);
+  };
+  img.src=URL.createObjectURL(f);
+  input.value="";
+};
+window.removePhoto=function(name){
+  pendingPhoto=null;
+  const prev=document.getElementById("m_photo_prev");
+  if(prev) prev.innerHTML=avatar({name:name||""},true);
+};
+function photoRowHTML(p){
+  return `<div class="photo-row">
+    <span id="m_photo_prev">${avatar(p||{name:""},true)}</span>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <label class="btn btn-ghost btn-sm" style="cursor:pointer">${t("f_photo")}<input type="file" accept="image/*" style="display:none" onchange="handlePhoto(this)"></label>
+      <button type="button" class="btn btn-ghost btn-sm" onclick="removePhoto('${esc((p&&p.name)||"")}')">${t("remove_photo")}</button>
+    </div>
+  </div>`;
+}
+
+/* ============ I18N APPLY ============ */
+function applyLang(){
+  document.documentElement.lang=S.settings.lang;
+  $$("[data-t]").forEach(el=>el.textContent=t(el.dataset.t));
+  $$("[data-t-ph]").forEach(el=>el.placeholder=t(el.dataset.tPh));
+  const d=new Date();
+  $("#todayLabel").textContent=d.toLocaleDateString(S.settings.lang==="fr"?"fr-FR":"en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+}
+
+/* ============ NAVIGATION ============ */
+function applyTheme(){
+  const dark = S.settings.theme==="dark";
+  document.documentElement.setAttribute("data-theme", dark?"dark":"light");
+  const tb=$("#themeBtn"); if(tb) tb.textContent = dark?"☀️":"🌙";
+  const meta=document.querySelector('meta[name="theme-color"]');
+  if(meta) meta.content = dark?"#0E191C":"#EAF3F4";
+}
+$("#themeBtn").addEventListener("click",()=>{
+  S.settings.theme = S.settings.theme==="dark" ? "light" : "dark";
+  applyTheme(); persist();
+});
+const burgerBtn=$("#burgerBtn"), navLinks=$("#navLinks");
+function closeMenu(){ navLinks.classList.remove("open"); burgerBtn.classList.remove("open"); burgerBtn.setAttribute("aria-expanded","false"); }
+burgerBtn.addEventListener("click",()=>{
+  const open=navLinks.classList.toggle("open");
+  burgerBtn.classList.toggle("open",open);
+  burgerBtn.setAttribute("aria-expanded",open);
+});
+document.addEventListener("click",e=>{
+  if(!navLinks.contains(e.target)&&!burgerBtn.contains(e.target)) closeMenu();
+});
+$$(".nav-btn").forEach(b=>b.addEventListener("click",()=>{
+  $$(".nav-btn").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active");
+  $$(".page").forEach(p=>p.classList.remove("active"));
+  $("#page-"+b.dataset.nav).classList.add("active");
+  closeMenu();
+  renderAll();
+}));
+
+/* ============ MODAL ============ */
+function openModal(html){ $("#modalBox").innerHTML=html; $("#modalBg").classList.add("open"); }
+function closeModal(){ $("#modalBg").classList.remove("open"); }
+$("#modalBg").addEventListener("click",e=>{ if(e.target.id==="modalBg") closeModal(); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeModal(); });
+/* '/' jumps to search on the current page */
+document.addEventListener("keydown",e=>{
+  if(e.key!=="/"||e.ctrlKey||e.metaKey) return;
+  const tag=(document.activeElement&&document.activeElement.tagName)||"";
+  if(["INPUT","TEXTAREA","SELECT"].includes(tag)) return;
+  const map={ "page-students":"#stSearch", "page-payments":"#paSearch" };
+  const page=document.querySelector(".page.active");
+  const sel=page?map[page.id]:null;
+  if(sel&&$(sel)){ e.preventDefault(); $(sel).focus(); }
+});
+
+/* in-app confirm dialog (browser confirm() is blocked in some environments) */
+let confirmAction=null;
+function askConfirm(message,onYes){
+  confirmAction=onYes;
+  openModal(`
+    <h2 style="color:var(--red)">⚠ ${esc(message)}</h2>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">${t("cancel")}</button>
+      <button class="btn btn-danger" onclick="runConfirm()">${t("del")}</button>
+    </div>`);
+}
+window.runConfirm=function(){
+  closeModal();
+  if(confirmAction){ confirmAction(); confirmAction=null; }
+};
+
+/* ============ DASHBOARD ============ */
+function renderDashboard(){
+  const active=S.students.filter(s=>!s.archived);
+  $("#dStudents").textContent=active.length;
+  $("#dClasses").textContent=S.classes.length;
+  $("#dTeachers").textContent=S.teachers.length;
+  const m=monthKey(new Date());
+  const unpaid=active.filter(s=>feeDue(s,m)&&feeStatus(s,m)!=="paid");
+  $("#dUnpaid").textContent=unpaid.length;
+
+  /* birthdays this week */
+  const bdays=upcomingBirthdays();
+  $("#dBirthdays").innerHTML = bdays.length
+    ? `<div class="card" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 22px">
+        <b>${t("bday")}</b>
+        ${bdays.map(b=>`<span class="badge ${b.diff===0?"badge-paid":"badge-teal"}">${esc(b.s.name)} — ${b.diff===0?t("bday_today"):fmtDay(b.date)}</span>`).join("")}
+      </div>`
+    : "";
+
+  /* today's teachers — respects cancellations and one-time sessions */
+  const todaySessions=sessionsForDate(new Date()).filter(x=>!x.cancelId);
+  $("#dToday").innerHTML = todaySessions.length
+    ? "<table><tbody>"+todaySessions.map(x=>{
+        const top = x.kind==="event" ? "⭐ "+esc(x.title) : esc(x.teacher);
+        const sub = x.kind==="event" ? esc(x.teacher||"") : esc(x.classId?className(x.classId):(x.subject||""));
+        return `<tr><td><b>${top}</b><br><span style="color:var(--muted);font-size:.82rem">${sub}</span></td><td style="text-align:right"><span class="badge badge-teal">${esc(x.from)}–${esc(x.to)}</span></td></tr>`;
+      }).join("")+"</tbody></table>"
+    : `<div class="empty"><div class="big">😌</div>${t("none_today")}</div>`;
+
+  /* behind-on-payments list: every owed month, clickable to pay that month */
+  const behind=active.map(s=>({s,owed:owedMonthsList(s)})).filter(x=>x.owed.length)
+    .sort((a,b)=>b.owed.length-a.owed.length);
+  $("#dUnpaidList").innerHTML = behind.length
+    ? "<table><tbody>"+behind.slice(0,8).map(({s,owed})=>{
+        const chips=owed.map(o=>
+          `<span class="badge ${o.st==="partial"?"badge-partial":"badge-unpaid"}" style="cursor:pointer;margin:2px 4px 2px 0;display:inline-block" onclick="payFeeModal('${s.id}','${o.m}')">${shortMonth(o.m)}${o.st==="partial"?" ◐":""}</span>`
+        ).join("");
+        return `<tr><td><div class="person">${avatar(s)}<div><b>${esc(s.name)}</b> <span style="color:var(--muted);font-size:.8rem">· ${esc(className(s.classId))}</span><br>${chips}</div></div></td></tr>`;
+      }).join("")+"</tbody></table>" + (behind.length>8?`<p style="color:var(--muted);font-size:.82rem;margin-top:8px">+${behind.length-8}…</p>`:"")
+    : `<div class="empty"><div class="big">🎉</div>${t("all_paid")}</div>`;
+}
+
+/* ============ STUDENTS ============ */
+function renderClassFilter(){
+  const sel=$("#stClassFilter");
+  sel.innerHTML=`<option value="all">${t("all_classes")}</option>`+
+    S.classes.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join("");
+  sel.value=stClass;
+}
+function renderStudents(){
+  renderClassFilter();
+  const m=monthKey(new Date());
+  const showArchived = $("#stStatus").value==="archived";
+  let list=S.students.filter(s=>
+    (!!s.archived)===showArchived &&
+    (stClass==="all"||s.classId===stClass) &&
+    s.name.toLowerCase().includes(stQuery.toLowerCase()));
+  list.sort((a,b)=>a.name.localeCompare(b.name));
+  $("#stTable").innerHTML = list.length
+    ? `<table><thead><tr>
+        <th>${t("th_name")}</th><th>${t("th_class")}</th><th>${t("th_stphone")}</th>
+        <th>${t("th_parent")}</th><th>${t("th_status")}</th><th></th></tr></thead><tbody>`+
+      list.map(s=>{
+        const st=feeStatus(s,m);
+        const owed=owedMonths(s);
+        const badge = st==="notdue" ? `<span style="color:var(--muted)">${t("not_due")}</span>`
+          : `<span class="badge ${st==="paid"?"badge-paid":st==="partial"?"badge-partial":"badge-unpaid"}">${t(st==="paid"?"paid":st==="partial"?"partial":"unpaid")}</span>`;
+        const owedNote = owed>1 ? `<br><span style="color:var(--red);font-size:.75rem;font-weight:700">${t("owes")} ${owed} ${t("owes_months")}</span>` : "";
+        return `<tr>
+        <td><div class="person">${avatar(s)}<div><b>${esc(s.name)}</b>${s.notes?`<br><span style="color:var(--amber);font-size:.78rem">⚠ ${esc(s.notes)}</span>`:""}</div></div></td>
+        <td><span class="badge badge-teal">${esc(className(s.classId))}</span></td>
+        <td>${s.studentPhone?`<span style="cursor:pointer;text-decoration:underline dotted" title="${t("copied").replace(" ✓","")}" onclick="copyTxt('${esc(s.studentPhone)}')">${esc(s.studentPhone)}</span>`:"—"}</td>
+        <td>${esc(s.parent||"—")}<br>${s.parentPhone?`<span style="color:var(--muted);font-size:.82rem;cursor:pointer;text-decoration:underline dotted" onclick="copyTxt('${esc(s.parentPhone)}')">${esc(s.parentPhone)}</span>`:""}</td>
+        <td>${badge}${owedNote}</td>
+        <td><div class="row-actions">
+          <button class="mini-btn" onclick="studentModal('${s.id}')">${t("edit")}</button>
+          ${s.archived
+            ? `<button class="mini-btn green" onclick="restoreStudent('${s.id}')">${t("restore")}</button>
+               <button class="mini-btn danger" onclick="delStudent('${s.id}')">${t("del")}</button>`
+            : `<button class="mini-btn danger" onclick="archiveStudent('${s.id}')">${t("archive")}</button>`}
+        </div></td></tr>`;}).join("")+"</tbody></table>"
+    : `<div class="empty"><div class="big">🎓</div>${t("no_students")}</div>`;
+}
+window.archiveStudent=function(id){
+  askConfirm(t("arch_warn"),()=>{
+    const s=S.students.find(x=>x.id===id); if(s) s.archived=true;
+    persist(); renderAll(); toast(t("t_saved"));
+  });
+};
+window.restoreStudent=function(id){
+  const s=S.students.find(x=>x.id===id); if(s) s.archived=false;
+  persist(); renderAll(); toast(t("t_saved"));
+};
+function exportStudentsCSV(){
+  const showArchived=$("#stStatus").value==="archived";
+  const rows=S.students.filter(s=>(!!s.archived)===showArchived)
+    .sort((a,b)=>a.name.localeCompare(b.name));
+  const head=["Name","Class","Student phone","Parent","Parent phone","Joined","Monthly fee","Notes"];
+  const csv=[head.join(",")].concat(rows.map(s=>[
+    s.name,className(s.classId),s.studentPhone||"",s.parent||"",s.parentPhone||"",
+    s.joined||"",feeAmt(s),(s.notes||"").replace(/[\r\n,]+/g," ")
+  ].map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(","))).join("\r\n");
+  const blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="speakup-students-"+new Date().toISOString().slice(0,10)+".csv";
+  a.click(); URL.revokeObjectURL(a.href);
+}
+window.studentModal=function(id){
+  const s=id?S.students.find(x=>x.id===id):null;
+  pendingPhoto=undefined;
+  openModal(`
+    <h2>${s?t("st_modal_edit"):t("st_modal_add")}</h2>
+    ${photoRowHTML(s)}
+    <div class="field"><label>${t("f_fullname")}</label><input id="m_name" value="${esc(s?.name||"")}"></div>
+    <div class="grid grid-2">
+      <div class="field"><label>${t("f_dob")}</label><input type="date" id="m_dob" value="${esc(s?.dob||"")}"></div>
+      <div class="field"><label>${t("f_joined")}</label><input type="date" id="m_joined" value="${esc(s?.joined||new Date().toISOString().slice(0,10))}"></div>
+    </div>
+    <div class="grid grid-2">
+      <div class="field"><label>${t("f_class")}</label><select id="m_class">
+        <option value="">${t("unassigned")}</option>
+        ${S.classes.map(c=>`<option value="${c.id}" ${s?.classId===c.id?"selected":""}>${esc(c.name)}</option>`).join("")}
+      </select></div>
+      <div class="field"><label>${t("f_stphone")}</label><input id="m_stphone" value="${esc(s?.studentPhone||"")}"></div>
+    </div>
+    <div class="grid grid-2">
+      <div class="field"><label>${t("f_fee")}</label><input type="number" id="m_fee" min="0" value="${s?.fee??S.settings.defaultFee??0}"></div>
+      <div class="field"><label>${t("f_parent")}</label><input id="m_parent" value="${esc(s?.parent||"")}"></div>
+    </div>
+    <div class="field"><label>${t("f_parent_phone")}</label><input id="m_parentphone" value="${esc(s?.parentPhone||"")}"></div>
+    <div class="field"><label>${t("f_notes")}</label><textarea id="m_notes">${esc(s?.notes||"")}</textarea></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">${t("cancel")}</button>
+      <button class="btn btn-primary" onclick="saveStudent('${id||""}')">${t("save")}</button>
+    </div>`);
+};
+window.saveStudent=function(id){
+  const name=$("#m_name").value.trim(); if(!name) return;
+  const data={ name, dob:$("#m_dob").value, joined:$("#m_joined").value, classId:$("#m_class").value,
+    studentPhone:$("#m_stphone").value.trim(),
+    parent:$("#m_parent").value.trim(), parentPhone:$("#m_parentphone").value.trim(),
+    fee:Number($("#m_fee").value)||0, notes:$("#m_notes").value.trim() };
+  if(id){ const st=S.students.find(x=>x.id===id);
+    const feeChanged = st.fee!==data.fee;
+    Object.assign(st,data); if(pendingPhoto!==undefined) st.photo=pendingPhoto||"";
+    if(feeChanged && feePaidAmt(monthKey(new Date()),id)>0) setTimeout(()=>toast(t("fee_warn")),600);
+  }
+  else { const st=Object.assign({id:uid()},data); if(pendingPhoto) st.photo=pendingPhoto; S.students.push(st); }
+  persist(); closeModal(); renderAll(); toast(t("t_saved"));
+};
+window.delStudent=function(id){
+  askConfirm(t("confirm_del"),()=>{
+    S.students=S.students.filter(x=>x.id!==id);
+    persist(); renderAll(); toast(t("t_deleted"));
+  });
+};
+
+/* ============ CLASSES ============ */
+function renderClasses(){
+  const m=monthKey(new Date());
+  $("#clGrid").innerHTML = S.classes.length
+    ? S.classes.map(c=>{
+        const kids=S.students.filter(s=>!s.archived&&s.classId===c.id);
+        const due=kids.filter(s=>feeDue(s,m));
+        const paid=due.filter(s=>feeStatus(s,m)==="paid").length;
+        const unpaid=due.length-paid;
+        const pct=due.length?Math.round(paid/due.length*100):0;
+        return `<div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div><h3>${esc(c.name)}</h3>
+            <p style="color:var(--muted);font-size:.88rem;margin-top:4px">${kids.length} ${t("cl_students")}</p></div>
+            <div class="row-actions">
+              <button class="mini-btn" onclick="classModal('${c.id}')">${t("edit")}</button>
+              <button class="mini-btn danger" onclick="delClass('${c.id}')">${t("del")}</button>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;margin:12px 0 10px">
+            <span class="badge badge-paid">${paid} ${t("paid")}</span>
+            <span class="badge badge-unpaid">${unpaid} ${t("unpaid")}</span>
+          </div>
+          <div class="cl-bar"><div class="cl-bar-fill" style="width:${pct}%"></div></div>
+          <p style="color:var(--muted);font-size:.78rem;margin-top:6px">${pct}% ${t("cl_collected")}</p>
+          <div style="margin-top:10px">${kids.slice(0,6).map(s=>`<span class="badge badge-teal" style="margin:0 4px 6px 0;display:inline-block">${esc(s.name)}</span>`).join("")||""}</div>
+        </div>`;
+      }).join("")
+    : `<div class="card empty" style="grid-column:1/-1"><div class="big">🏫</div>${t("cl_none")}</div>`;
+}
+window.classModal=function(id){
+  const c=id?S.classes.find(x=>x.id===id):null;
+  openModal(`
+    <h2>${c?t("cl_modal_edit"):t("cl_modal_add")}</h2>
+    <div class="field"><label>${t("f_classname")}</label><input id="m_clname" value="${esc(c?.name||"")}" placeholder="Class A / Beginners…"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">${t("cancel")}</button>
+      <button class="btn btn-primary" onclick="saveClass('${id||""}')">${t("save")}</button>
+    </div>`);
+};
+window.saveClass=function(id){
+  const name=$("#m_clname").value.trim(); if(!name) return;
+  if(id){ S.classes.find(x=>x.id===id).name=name; }
+  else { S.classes.push({id:uid(),name}); }
+  persist(); closeModal(); renderAll(); toast(t("t_saved"));
+};
+window.delClass=function(id){
+  askConfirm(t("confirm_del")+" "+t("cl_del_warn"),()=>{
+    S.classes=S.classes.filter(x=>x.id!==id);
+    S.students.forEach(s=>{ if(s.classId===id) s.classId=""; });
+    persist(); renderAll(); toast(t("t_deleted"));
+  });
+};
+
+/* ============ TEACHERS ============ */
+function schedText(te){
+  return (te.schedule||[]).map(sl=>{
+    const cn=sl.classId?className(sl.classId):"";
+    return `${t("day_"+sl.day).slice(0,3)} ${sl.from}–${sl.to}${cn?" ("+cn+")":""}`;
+  }).join(" · ")||"—";
+}
+function renderTeachers(){
+  const m=monthKey(new Date());
+  $("#teTable").innerHTML = S.teachers.length
+    ? `<table><thead><tr><th>${t("th_name")}</th><th>${t("th_subject")}</th><th>${t("th_schedule")}</th><th>${t("th_salary")}</th><th>${t("th_status")}</th><th></th></tr></thead><tbody>`+
+      S.teachers.map(te=>`<tr>
+        <td><div class="person">${avatar(te)}<div><b>${esc(te.name)}</b><br><span style="color:var(--muted);font-size:.82rem">${esc(te.phone||"")}</span></div></div></td>
+        <td>${esc(te.subject||"—")}</td>
+        <td style="font-size:.84rem">${esc(schedText(te))}</td>
+        <td>${money(te.salary)}</td>
+        <td><span class="badge ${salPaid(m,te.id)?"badge-paid":"badge-unpaid"}">${salPaid(m,te.id)?t("paid"):t("unpaid")}</span></td>
+        <td><div class="row-actions">
+          <button class="mini-btn" onclick="teacherModal('${te.id}')">${t("edit")}</button>
+          <button class="mini-btn danger" onclick="delTeacher('${te.id}')">${t("del")}</button>
+        </div></td></tr>`).join("")+"</tbody></table>"
+    : `<div class="empty"><div class="big">👩‍🏫</div>${t("no_teachers")}</div>`;
+}
+function schedRowHTML(sl){
+  sl=sl||{day:"sat",classId:"",roomId:"",from:"09:00",to:"12:00"};
+  return `<div class="sched-row">
+    <select class="sl-day">${DAYS.map(d=>`<option value="${d}" ${sl.day===d?"selected":""}>${t("day_"+d)}</option>`).join("")}</select>
+    <select class="sl-class"><option value="">${t("unassigned")}</option>${S.classes.map(c=>`<option value="${c.id}" ${sl.classId===c.id?"selected":""}>${esc(c.name)}</option>`).join("")}</select>
+    <select class="sl-room"><option value="">${t("f_room")} —</option>${S.rooms.map(r=>`<option value="${r.id}" ${sl.roomId===r.id?"selected":""}>${esc(r.name)}</option>`).join("")}</select>
+    <input type="time" class="sl-from" value="${esc(sl.from)}">
+    <input type="time" class="sl-to" value="${esc(sl.to)}">
+    <button type="button" class="sched-del" onclick="this.parentElement.remove()">✕</button>
+  </div>`;
+}
+window.teacherModal=function(id){
+  const te=id?S.teachers.find(x=>x.id===id):null;
+  pendingPhoto=undefined;
+  openModal(`
+    <h2>${te?t("te_modal_edit"):t("te_modal_add")}</h2>
+    ${photoRowHTML(te)}
+    <div class="grid grid-2">
+      <div class="field"><label>${t("f_fullname")}</label><input id="m_tname" value="${esc(te?.name||"")}"></div>
+      <div class="field"><label>${t("f_phone")}</label><input id="m_tphone" value="${esc(te?.phone||"")}"></div>
+    </div>
+    <div class="grid grid-2">
+      <div class="field"><label>${t("f_subject")}</label><input id="m_tsubject" value="${esc(te?.subject||"")}"></div>
+      <div class="field"><label>${t("f_salary")}</label><input type="number" id="m_tsalary" min="0" value="${te?.salary??0}"></div>
+    </div>
+    <div class="fieldset-title">${t("f_schedule")}</div>
+    <div id="m_sched">${(te?.schedule||[]).map(schedRowHTML).join("")}</div>
+    <button type="button" class="btn btn-ghost btn-sm" onclick="document.getElementById('m_sched').insertAdjacentHTML('beforeend', schedRowHTML())">${t("add_slot")}</button>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">${t("cancel")}</button>
+      <button class="btn btn-primary" onclick="saveTeacher('${id||""}')">${t("save")}</button>
+    </div>`);
+};
+window.schedRowHTML=schedRowHTML;
+window.saveTeacher=function(id){
+  const name=$("#m_tname").value.trim(); if(!name) return;
+  const schedule=[...$$("#m_sched .sched-row")].map(r=>({
+    day:r.querySelector(".sl-day").value,
+    classId:r.querySelector(".sl-class").value,
+    roomId:r.querySelector(".sl-room").value,
+    from:r.querySelector(".sl-from").value,
+    to:r.querySelector(".sl-to").value
+  })).filter(sl=>sl.from&&sl.to);
+  /* room conflict check: against other teachers and within this teacher's own slots */
+  for(let i=0;i<schedule.length;i++){
+    const sl=schedule[i];
+    const c=templateConflict(sl, id||"__new__");
+    if(c){ toast(`${t("conflict")} ${roomName(sl.roomId)} · ${t("day_"+sl.day)} ${sl.from}–${sl.to} ${t("conflict_with")} ${c.teacher} (${c.from}–${c.to})`); return; }
+    for(let j=0;j<i;j++){
+      const o=schedule[j];
+      if(sl.roomId && o.roomId===sl.roomId && o.day===sl.day && timesOverlap(sl.from,sl.to,o.from,o.to)){
+        toast(`${t("conflict")} ${roomName(sl.roomId)} · ${t("day_"+sl.day)} ${sl.from}–${sl.to}`); return;
+      }
+    }
+  }
+  const data={ name, phone:$("#m_tphone").value.trim(), subject:$("#m_tsubject").value.trim(),
+    salary:Number($("#m_tsalary").value)||0, schedule };
+  if(id){ const tt=S.teachers.find(x=>x.id===id); Object.assign(tt,data); if(pendingPhoto!==undefined) tt.photo=pendingPhoto||""; }
+  else { const tt=Object.assign({id:uid()},data); if(pendingPhoto) tt.photo=pendingPhoto; S.teachers.push(tt); }
+  persist(); closeModal(); renderAll(); toast(t("t_saved"));
+};
+window.delTeacher=function(id){
+  askConfirm(t("confirm_del"),()=>{
+    S.teachers=S.teachers.filter(x=>x.id!==id);
+    persist(); renderAll(); toast(t("t_deleted"));
+  });
+};
+
+/* ============ CLASSROOMS (rooms) + CONFLICTS ============ */
+function roomName(id){ const r=S.rooms.find(x=>x.id===id); return r?r.name:""; }
+function timesOverlap(a1,a2,b1,b2){ return a1<b2 && b1<a2; } /* HH:MM string compare */
+
+/* conflicts for a template slot (same room, same weekday, overlapping time) */
+function templateConflict(slot, exceptTeacherId){
+  if(!slot.roomId) return null;
+  for(const te of S.teachers){
+    if(te.id===exceptTeacherId) continue;
+    for(const sl of (te.schedule||[])){
+      if(sl.roomId===slot.roomId && sl.day===slot.day && timesOverlap(slot.from,slot.to,sl.from,sl.to)){
+        return { teacher:te.name, day:sl.day, from:sl.from, to:sl.to };
+      }
+    }
+  }
+  return null;
+}
+/* conflicts for a one-time session or event on a real date */
+function extraConflict(date, roomId, from, to, exceptOvId, exceptEventId){
+  if(!roomId) return null;
+  const day=DAYS[(new Date(date+"T12:00").getDay()+1)%7];
+  const ov=S.overrides.filter(o=>o.date===date);
+  /* against weekly template (skip slots cancelled on that date) */
+  for(const te of S.teachers){
+    for(const sl of (te.schedule||[])){
+      if(sl.day!==day || sl.roomId!==roomId) continue;
+      const cancelled=ov.some(o=>o.kind==="cancel"&&o.teacherId===te.id&&o.from===sl.from&&o.to===sl.to);
+      if(!cancelled && timesOverlap(from,to,sl.from,sl.to))
+        return { teacher:te.name, from:sl.from, to:sl.to };
+    }
+  }
+  /* against other extras on the same date */
+  for(const o of ov){
+    if(o.kind!=="extra" || o.id===exceptOvId || o.roomId!==roomId) continue;
+    if(timesOverlap(from,to,o.from,o.to)){
+      const te=S.teachers.find(x=>x.id===o.teacherId);
+      return { teacher:te?te.name:"?", from:o.from, to:o.to };
+    }
+  }
+  /* against events occurring that date */
+  for(const ev of S.events){
+    if(ev.id===exceptEventId || ev.roomId!==roomId) continue;
+    const occurs = ev.recurring==="weekly" ? ev.day===day
+      && !ov.some(o=>o.kind==="cancelEvent"&&o.eventId===ev.id)
+      : ev.date===date;
+    if(occurs && timesOverlap(from,to,ev.from,ev.to))
+      return { teacher:ev.title, from:ev.from, to:ev.to };
+  }
+  return null;
+}
+window.roomsModal=function(){
+  const usage=S.rooms.map(r=>{
+    const byDay=DAYS.map(day=>{
+      const slots=[];
+      S.teachers.forEach(te=>(te.schedule||[]).forEach(sl=>{
+        if(sl.roomId===r.id&&sl.day===day) slots.push(sl.from+"–"+sl.to);
+      }));
+      slots.sort();
+      return slots.length?`<b>${t("day_"+day).slice(0,3)}</b> ${slots.join(", ")}`:"";
+    }).filter(Boolean).join(" · ");
+    return `<div style="padding:8px 0;border-bottom:1px solid var(--line);font-size:.82rem">
+      <b>${esc(r.name)}</b><br><span style="color:var(--muted)">${byDay||t("ro_free")}</span></div>`;
+  }).join("");
+  openModal(`
+    <h2>${t("ro_title")}</h2>
+    <div id="m_roomlist">${S.rooms.map(r=>`
+      <div class="sched-row" style="grid-template-columns:1fr 38px">
+        <input class="ro-name" data-id="${r.id}" value="${esc(r.name)}">
+        <button type="button" class="sched-del" onclick="this.parentElement.remove()">✕</button>
+      </div>`).join("")}</div>
+    <button type="button" class="btn btn-ghost btn-sm" onclick="document.getElementById('m_roomlist').insertAdjacentHTML('beforeend',roomRowHTML())">${t("ro_add")}</button>
+    ${S.rooms.length?`<div class="fieldset-title">${t("ro_usage")}</div>${usage}`:""}
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">${t("cancel")}</button>
+      <button class="btn btn-primary" onclick="saveRooms()">${t("save")}</button>
+    </div>`);
+};
+window.roomRowHTML=function(){
+  return `<div class="sched-row" style="grid-template-columns:1fr 38px">
+    <input class="ro-name" data-id="" placeholder="${t("f_roomname")}">
+    <button type="button" class="sched-del" onclick="this.parentElement.remove()">✕</button>
+  </div>`;
+};
+window.saveRooms=function(){
+  const rows=[...$$("#m_roomlist .ro-name")];
+  const next=[];
+  rows.forEach(inp=>{
+    const name=inp.value.trim(); if(!name) return;
+    const id=inp.dataset.id||uid();
+    next.push({id,name});
+  });
+  const removed=S.rooms.filter(r=>!next.some(n=>n.id===r.id)).map(r=>r.id);
+  S.rooms=next;
+  /* unassign removed rooms from slots and extras */
+  S.teachers.forEach(te=>(te.schedule||[]).forEach(sl=>{ if(removed.includes(sl.roomId)) sl.roomId=""; }));
+  S.overrides.forEach(o=>{ if(removed.includes(o.roomId)) o.roomId=""; });
+  persist(); closeModal(); renderAll(); toast(t("t_saved"));
+};
+
+/* ============ WEEKLY SCHEDULE ============ */
+const SCH_HUES=[190,150,270,20,330,100,45,220];
+let schOffset=0; /* weeks from current: 0 = this week, -1 = last, +1 = next */
+let _schSessions=[]; /* click registry rebuilt on each render */
+function classHue(classId){
+  const i=S.classes.findIndex(c=>c.id===classId);
+  return SCH_HUES[(i<0?7:i)%SCH_HUES.length];
+}
+function weekStart(offset){
+  const d=new Date(); d.setHours(0,0,0,0);
+  d.setDate(d.getDate() - (d.getDay()+1)%7 + offset*7); /* back to Saturday */
+  return d;
+}
+function dKey(d){
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function fmtDay(d){
+  return d.toLocaleDateString(S.settings.lang==="fr"?"fr-FR":"en-GB",{day:"numeric",month:"short"});
+}
+/* final session list for a real date: template + cancellations + one-time extras */
+function sessionsForDate(dateObj){
+  const day=DAYS[(dateObj.getDay()+1)%7];
+  const ds=dKey(dateObj);
+  const ov=S.overrides.filter(o=>o.date===ds);
+  const list=[];
+  S.teachers.forEach(te=>(te.schedule||[]).forEach(sl=>{
+    if(sl.day===day){
+      const c=ov.find(o=>o.kind==="cancel"&&o.teacherId===te.id&&o.from===sl.from&&o.to===sl.to);
+      list.push({kind:"tpl",date:ds,teacherId:te.id,teacher:te.name,subject:te.subject,
+        classId:sl.classId,roomId:sl.roomId,from:sl.from,to:sl.to,cancelId:c?c.id:null,note:c?(c.note||""):""});
+    }
+  }));
+  ov.filter(o=>o.kind==="extra").forEach(o=>{
+    const te=S.teachers.find(x=>x.id===o.teacherId);
+    list.push({kind:"extra",date:ds,ovId:o.id,teacherId:o.teacherId,
+      teacher:te?te.name:"?",classId:o.classId,roomId:o.roomId,from:o.from,to:o.to,note:o.note||""});
+  });
+  /* events: weekly on matching weekday, or one-time on matching date */
+  S.events.forEach(ev=>{
+    const occurs = ev.recurring==="weekly" ? ev.day===day : ev.date===ds;
+    if(!occurs) return;
+    const c = ev.recurring==="weekly"
+      ? ov.find(o=>o.kind==="cancelEvent"&&o.eventId===ev.id) : null;
+    const host = ev.hostTeacherId
+      ? (S.teachers.find(x=>x.id===ev.hostTeacherId)||{}).name||"?"
+      : (ev.guest||"");
+    list.push({kind:"event",date:ds,eventId:ev.id,title:ev.title,teacher:host,
+      roomId:ev.roomId,from:ev.from,to:ev.to,
+      cancelId:c?c.id:null,note:ev.note||"",once:ev.recurring!=="weekly"});
+  });
+  list.sort((a,b)=>(a.from||"").localeCompare(b.from||""));
+  return list;
+}
+function renderSchedule(){
+  const start=weekStart(schOffset);
+  const end=new Date(start); end.setDate(end.getDate()+6);
+  const todayStr=new Date().toDateString();
+  $("#schLabel").textContent=`${fmtDay(start)} – ${fmtDay(end)} ${end.getFullYear()}`;
+  $("#schToday").style.display = schOffset===0 ? "none" : "inline-flex";
+  _schSessions=[];
+
+  const anySession=S.teachers.some(te=>(te.schedule||[]).length) || S.overrides.length;
+  if(!anySession){
+    $("#schGrid").innerHTML=`<div class="card empty" style="grid-column:1/-1"><div class="big">📅</div>${t("sch_none")}</div>`;
+    return;
+  }
+  $("#schGrid").innerHTML=DAYS.map((day,i)=>{
+    const date=new Date(start); date.setDate(date.getDate()+i);
+    const ds=dKey(date);
+    const isToday=date.toDateString()===todayStr;
+    const sessions=sessionsForDate(date);
+    return `<div class="sch-day${isToday?" today":""}">
+      <div class="sch-day-head">${t("day_"+day)}<br><span class="sch-date">${fmtDay(date)}</span></div>
+      ${sessions.length
+        ? sessions.map(x=>{
+            const idx=_schSessions.push(x)-1;
+            const isEv=x.kind==="event";
+            const h=isEv?280:classHue(x.classId);
+            const cls = x.cancelId ? " cancelled" : (x.kind==="extra" ? " extra" : "");
+            return `<div class="sch-box${cls}" onclick="schBoxClick(${idx})" style="background:hsla(${h},55%,50%,.14);border-left:3px solid hsl(${h},55%,45%)">
+              <span class="sch-time">${esc(x.from)}–${esc(x.to)}</span>
+              <b>${isEv?"⭐ "+esc(x.title):esc(x.teacher)}</b>
+              ${isEv?(x.teacher?`<span>${esc(x.teacher)}</span>`:""):(x.classId?`<span>${esc(className(x.classId))}</span>`:"")}
+              ${x.roomId?`<span style="opacity:.8">🚪 ${esc(roomName(x.roomId))}</span>`:""}
+              ${x.cancelId?`<span class="sch-flag">⊘ ${t("ov_cancelled")}</span>`:""}
+              ${x.kind==="extra"?`<span class="sch-flag">＋ ${t("ov_extra_title")}${x.note?" · "+esc(x.note):""}</span>`:""}
+            </div>`;
+          }).join("")
+        : `<div class="sch-free">${t("sch_free")}</div>`}
+      <button class="sch-add" onclick="extraModal('${ds}')" title="${t("ov_extra_title")}">＋</button>
+    </div>`;
+  }).join("");
+}
+window.schBoxClick=function(idx){
+  const x=_schSessions[idx]; if(!x) return;
+  if(x.kind==="event"){
+    const head=`<h2>⭐ ${esc(x.title)} — ${esc(x.date)}</h2>
+      <p style="margin-bottom:16px">${x.teacher?`<b>${esc(x.teacher)}</b> · `:""}${x.roomId?esc(roomName(x.roomId))+" · ":""}${esc(x.from)}–${esc(x.to)}</p>`;
+    if(x.cancelId){
+      openModal(`${head}
+        <p style="margin-bottom:16px"><span class="badge badge-unpaid">⊘ ${t("ov_cancelled")}</span></p>
+        <div class="modal-actions">
+          <button class="btn btn-ghost" onclick="closeModal()">${t("close")}</button>
+          <button class="btn btn-primary" onclick="removeOverride('${x.cancelId}')">${t("ov_restore")}</button>
+        </div>`);
+    } else {
+      openModal(`${head}
+        ${x.note?`<p style="color:var(--muted);margin-bottom:16px">📝 ${esc(x.note)}</p>`:""}
+        <div class="modal-actions">
+          <button class="btn btn-ghost" onclick="closeModal()">${t("close")}</button>
+          ${x.once
+            ? `<button class="btn btn-danger" onclick="deleteEvent('${x.eventId}')">${t("ev_del")}</button>`
+            : `<button class="btn btn-ghost" onclick="cancelEventDate('${x.eventId}','${x.date}')">${t("ev_cancel_date")}</button>
+               <button class="btn btn-danger" onclick="deleteEvent('${x.eventId}')">${t("ev_del_series")}</button>`}
+        </div>`);
+    }
+    return;
+  }
+  const head=`<h2>${t("sch_session")} — ${esc(x.date)}</h2>
+    <p style="margin-bottom:16px"><b>${esc(x.teacher)}</b> · ${x.classId?esc(className(x.classId))+" · ":""}${esc(x.from)}–${esc(x.to)}</p>`;
+  if(x.kind==="extra"){
+    openModal(`${head}
+      ${x.note?`<p style="color:var(--muted);margin-bottom:16px">📝 ${esc(x.note)}</p>`:""}
+      <div class="modal-actions">
+        <button class="btn btn-ghost" onclick="closeModal()">${t("close")}</button>
+        <button class="btn btn-danger" onclick="removeOverride('${x.ovId}')">${t("ov_del")}</button>
+      </div>`);
+  } else if(x.cancelId){
+    openModal(`${head}
+      <p style="margin-bottom:16px"><span class="badge badge-unpaid">⊘ ${t("ov_cancelled")}</span>${x.note?` <span style="color:var(--muted)">📝 ${esc(x.note)}</span>`:""}</p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" onclick="closeModal()">${t("close")}</button>
+        <button class="btn btn-primary" onclick="removeOverride('${x.cancelId}')">${t("ov_restore")}</button>
+      </div>`);
+  } else {
+    openModal(`${head}
+      <div class="field"><label>${t("ov_note")}</label><input id="m_ovnote"></div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" onclick="closeModal()">${t("close")}</button>
+        <button class="btn btn-ghost" onclick="cancelTeacherDay(${idx})">${t("ov_cancel_day")}</button>
+        <button class="btn btn-danger" onclick="cancelSession(${idx})">${t("ov_cancel")}</button>
+      </div>`);
+  }
+};
+window.cancelTeacherDay=function(idx){
+  const x=_schSessions[idx]; if(!x) return;
+  const note=$("#m_ovnote")?$("#m_ovnote").value.trim():"";
+  const day=DAYS[(new Date(x.date+"T12:00").getDay()+1)%7];
+  const te=S.teachers.find(z=>z.id===x.teacherId); if(!te) return;
+  (te.schedule||[]).forEach(sl=>{
+    if(sl.day!==day) return;
+    const exists=S.overrides.some(o=>o.kind==="cancel"&&o.date===x.date&&o.teacherId===te.id&&o.from===sl.from&&o.to===sl.to);
+    if(!exists) S.overrides.push({id:uid(),kind:"cancel",date:x.date,teacherId:te.id,from:sl.from,to:sl.to,note});
+  });
+  persist(); closeModal(); renderAll(); toast(t("t_saved"));
+};
+window.cancelSession=function(idx){
+  const x=_schSessions[idx]; if(!x) return;
+  S.overrides.push({ id:uid(), kind:"cancel", date:x.date,
+    teacherId:x.teacherId, from:x.from, to:x.to, note:$("#m_ovnote").value.trim() });
+  persist(); closeModal(); renderAll(); toast(t("t_saved"));
+};
+window.removeOverride=function(ovId){
+  S.overrides=S.overrides.filter(o=>o.id!==ovId);
+  persist(); closeModal(); renderAll(); toast(t("t_saved"));
+};
+window.cancelEventDate=function(eventId,date){
+  S.overrides.push({id:uid(),kind:"cancelEvent",eventId,date});
+  persist(); closeModal(); renderAll(); toast(t("t_saved"));
+};
+window.deleteEvent=function(eventId){
+  askConfirm(t("confirm_del"),()=>{
+    S.events=S.events.filter(e=>e.id!==eventId);
+    S.overrides=S.overrides.filter(o=>!(o.kind==="cancelEvent"&&o.eventId===eventId));
+    persist(); renderAll(); toast(t("t_deleted"));
+  });
+};
+window.extraModal=function(ds){
+  if(!S.teachers.length) return;
+  openModal(`
+    <h2 id="m_addtitle">${t("ov_extra_title")} — ${esc(ds)}</h2>
+    <div style="display:flex;gap:8px;margin-bottom:18px">
+      <button type="button" class="btn btn-primary btn-sm" id="m_typeSession" onclick="setAddType('session')">${t("ev_type_session")}</button>
+      <button type="button" class="btn btn-ghost btn-sm" id="m_typeEvent" onclick="setAddType('event')">${t("ev_type_event")}</button>
+    </div>
+    <div id="m_formSession">
+      <div class="grid grid-2">
+        <div class="field"><label>${t("f_teacher")}</label><select id="m_ovteacher">
+          ${S.teachers.map(te=>`<option value="${te.id}">${esc(te.name)}</option>`).join("")}
+        </select></div>
+        <div class="field"><label>${t("f_class")}</label><select id="m_ovclass">
+          <option value="">${t("unassigned")}</option>
+          ${S.classes.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join("")}
+        </select></div>
+      </div>
+    </div>
+    <div id="m_formEvent" style="display:none">
+      <div class="field"><label>${t("ev_title_lbl")}</label><input id="m_evtitle" placeholder="Speaking Club"></div>
+      <div class="grid grid-2">
+        <div class="field"><label>${t("f_host")}</label><select id="m_evhost" onchange="document.getElementById('m_evguestwrap').style.display=this.value==='__guest'?'block':'none'">
+          <option value="">—</option>
+          ${S.teachers.map(te=>`<option value="${te.id}">${esc(te.name)}</option>`).join("")}
+          <option value="__guest">${t("host_guest")}</option>
+        </select></div>
+        <div class="field"><label>${t("ev_repeat")}</label><select id="m_evrepeat">
+          <option value="once">${t("rep_once")}</option>
+          <option value="weekly">${t("rep_weekly")}</option>
+        </select></div>
+      </div>
+      <div class="field" id="m_evguestwrap" style="display:none"><label>${t("f_guest")}</label><input id="m_evguest" placeholder="Mr. John — native speaker"></div>
+    </div>
+    <div class="grid grid-2">
+      <div class="field"><label>${t("f_from")}</label><input type="time" id="m_ovfrom" value="09:00"></div>
+      <div class="field"><label>${t("f_to")}</label><input type="time" id="m_ovto" value="12:00"></div>
+    </div>
+    <div class="field"><label>${t("f_room")}</label><select id="m_ovroom">
+      <option value="">—</option>
+      ${S.rooms.map(r=>`<option value="${r.id}">${esc(r.name)}</option>`).join("")}
+    </select></div>
+    <div class="field"><label>${t("ov_note")}</label><input id="m_ovnote2"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">${t("cancel")}</button>
+      <button class="btn btn-primary" id="m_addSave" onclick="saveExtra('${esc(ds)}')">${t("save")}</button>
+    </div>`);
+};
+window.setAddType=function(type){
+  const sess=type==="session";
+  $("#m_formSession").style.display=sess?"block":"none";
+  $("#m_formEvent").style.display=sess?"none":"block";
+  $("#m_typeSession").className="btn btn-sm "+(sess?"btn-primary":"btn-ghost");
+  $("#m_typeEvent").className="btn btn-sm "+(sess?"btn-ghost":"btn-primary");
+  const ds=$("#m_addSave").getAttribute("onclick").match(/'([^']+)'/)[1];
+  $("#m_addSave").setAttribute("onclick", sess?`saveExtra('${ds}')`:`saveEvent('${ds}')`);
+};
+window.saveEvent=function(ds){
+  const title=$("#m_evtitle").value.trim(); if(!title) return;
+  const from=$("#m_ovfrom").value, to=$("#m_ovto").value;
+  if(!from||!to) return;
+  const roomId=$("#m_ovroom").value;
+  const c=extraConflict(ds, roomId, from, to, null, null);
+  if(c){ toast(`${t("conflict")} ${roomName(roomId)} ${t("conflict_with")} ${c.teacher} (${c.from}–${c.to})`); return; }
+  const host=$("#m_evhost").value;
+  const recurring=$("#m_evrepeat").value==="weekly"?"weekly":"once";
+  const day=DAYS[(new Date(ds+"T12:00").getDay()+1)%7];
+  S.events.push({ id:uid(), title,
+    hostTeacherId: host&&host!=="__guest" ? host : "",
+    guest: host==="__guest" ? $("#m_evguest").value.trim() : "",
+    roomId, from, to, recurring,
+    day: recurring==="weekly" ? day : "",
+    date: recurring==="once" ? ds : "",
+    note:$("#m_ovnote2").value.trim() });
+  persist(); closeModal(); renderAll(); toast(t("t_saved"));
+};
+window.saveExtra=function(ds){
+  const from=$("#m_ovfrom").value, to=$("#m_ovto").value;
+  if(!from||!to) return;
+  const roomId=$("#m_ovroom").value;
+  const c=extraConflict(ds, roomId, from, to, null);
+  if(c){ toast(`${t("conflict")} ${roomName(roomId)} ${t("conflict_with")} ${c.teacher} (${c.from}–${c.to})`); return; }
+  S.overrides.push({ id:uid(), kind:"extra", date:ds,
+    teacherId:$("#m_ovteacher").value, classId:$("#m_ovclass").value, roomId,
+    from, to, note:$("#m_ovnote2").value.trim() });
+  persist(); closeModal(); renderAll(); toast(t("t_saved"));
+};
+
+/* ============ GRADES ============ */
+let grClassId=null;
+function classScale(cid){ return S.classScale[cid]||20; }
+function studentAvg(cid, sid){
+  const tests=S.tests.filter(t=>t.classId===cid);
+  let sum=0,n=0;
+  tests.forEach(t=>{
+    const g=S.grades[t.id]&&S.grades[t.id][sid];
+    if(g!==undefined&&g!==null&&g!==""){ sum+=Number(g); n++; }
+  });
+  return n? {avg:sum/n, count:n} : null;
+}
+function renderGrades(){
+  const sel=$("#grClass");
+  if(!S.classes.length){
+    sel.innerHTML=""; 
+    $("#grTable").innerHTML=`<div class="empty"><div class="big">📝</div>${t("gr_no_classes")}</div>`;
+    return;
+  }
+  sel.innerHTML=S.classes.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join("");
+  if(!grClassId||!S.classes.some(c=>c.id===grClassId)) grClassId=S.classes[0].id;
+  sel.value=grClassId;
+  $("#grScale").value=classScale(grClassId);
+
+  const scale=classScale(grClassId);
+  const pass=scale/2;
+  const tests=S.tests.filter(t=>t.classId===grClassId);
+  const studs=S.students.filter(s=>!s.archived&&s.classId===grClassId).sort((a,b)=>a.name.localeCompare(b.name));
+
+  if(!studs.length){ $("#grTable").innerHTML=`<div class="empty"><div class="big">🎓</div>${t("gr_no_students")}</div>`; return; }
+  if(!tests.length){ $("#grTable").innerHTML=`<div class="empty"><div class="big">📝</div>${t("gr_no_tests")}</div>`; return; }
+
+  let passing=0, classSum=0, classN=0;
+  const rows=studs.map(s=>{
+    const cells=tests.map(te=>{
+      const g=(S.grades[te.id]&&S.grades[te.id][s.id]!==undefined)?S.grades[te.id][s.id]:"";
+      return `<td><input type="number" min="0" max="${scale}" step="0.25" value="${g}" data-test="${te.id}" data-stud="${s.id}"
+        style="width:64px;padding:7px 8px;border:1px solid var(--line);border-radius:8px;background:var(--field);color:var(--ink);text-align:center"
+        onchange="setGrade('${te.id}','${s.id}',this.value)"></td>`;
+    }).join("");
+    const a=studentAvg(grClassId,s.id);
+    let avgCell=`<td style="text-align:center;color:var(--muted)">—</td><td></td>`;
+    if(a){
+      const passed=a.avg>=pass;
+      if(passed) passing++;
+      classSum+=a.avg; classN++;
+      avgCell=`<td style="text-align:center"><b>${a.avg.toFixed(2)}</b><span style="color:var(--muted)">/${scale}</span></td>
+        <td style="text-align:center"><span class="badge ${passed?"badge-paid":"badge-unpaid"}">${passed?t("gr_pass"):t("gr_fail")}</span></td>`;
+    }
+    return `<tr><td><div class="person">${avatar(s)}<b>${esc(s.name)}</b></div></td>${cells}${avgCell}</tr>`;
+  }).join("");
+
+  const head=`<tr><th>${t("th_name")}</th>${tests.map(te=>
+    `<th style="text-align:center;cursor:pointer" onclick="testModal('${te.id}')" title="${t("edit")}">${esc(te.name)}<br><span style="font-weight:400;text-transform:none">/${scale} ✎</span></th>`
+  ).join("")}<th style="text-align:center">${t("gr_avg")}</th><th style="text-align:center">${t("gr_result")}</th></tr>`;
+
+  const rate = classN? Math.round(passing/classN*100):0;
+  const classAvg = classN? (classSum/classN).toFixed(2):"—";
+  $("#grTable").innerHTML=
+    `<div style="overflow-x:auto"><table>${head}<tbody>${rows}</tbody></table></div>
+     <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)">
+       <span class="badge badge-teal">${t("gr_class_avg")}: ${classAvg}/${scale}</span>
+       <span class="badge ${rate>=50?"badge-paid":"badge-unpaid"}">${t("gr_passrate")}: ${rate}% (${passing}/${classN})</span>
+     </div>`;
+}
+window.setGrade=function(testId,sid,val){
+  if(!S.grades[testId]) S.grades[testId]={};
+  const scale=classScale(grClassId);
+  if(val===""||val===null){ delete S.grades[testId][sid]; }
+  else{
+    let v=Number(val); if(isNaN(v)) return;
+    v=Math.max(0,Math.min(scale,v));
+    S.grades[testId][sid]=v;
+  }
+  persist();
+  /* light refresh: recompute averages without losing focus is complex; re-render is fine on change/blur */
+  renderGrades();
+};
+window.testModal=function(id){
+  const te=id?S.tests.find(x=>x.id===id):null;
+  openModal(`
+    <h2>${te?t("gr_test_edit"):t("gr_test_modal")}</h2>
+    <div class="field"><label>${t("gr_test_name")}</label><input id="m_testname" value="${esc(te?.name||"")}" placeholder="Unit 1 / Midterm…"></div>
+    <div class="modal-actions">
+      ${id?`<button class="btn btn-danger" onclick="delTest('${id}')">${t("del")}</button>`:""}
+      <button class="btn btn-ghost" onclick="closeModal()">${t("cancel")}</button>
+      <button class="btn btn-primary" onclick="saveTest('${id||""}')">${t("save")}</button>
+    </div>`);
+};
+window.saveTest=function(id){
+  const name=$("#m_testname").value.trim(); if(!name) return;
+  if(id){ S.tests.find(x=>x.id===id).name=name; }
+  else { S.tests.push({id:uid(),classId:grClassId,name}); }
+  persist(); closeModal(); renderGrades(); toast(t("t_saved"));
+};
+window.delTest=function(id){
+  askConfirm(t("gr_del_test"),()=>{
+    S.tests=S.tests.filter(x=>x.id!==id);
+    delete S.grades[id];
+    persist(); closeModal(); renderGrades(); toast(t("t_deleted"));
+  });
+};
+
+/* ============ PAYMENTS ============ */
+/* salaries stay simple paid/unpaid */
+window.togglePay=function(kind,id,m){
+  if(kind!=="salaries") return payFeeModal(id,m);
+  if(!S.salaries[m]) S.salaries[m]={};
+  const nowPaid=!S.salaries[m][id];
+  S.salaries[m][id]=nowPaid;
+  if(nowPaid){
+    const p=S.teachers.find(x=>x.id===id);
+    S.settings.receiptSeq=(S.settings.receiptSeq||0)+1;
+    S.receipts.push({ id:uid(), no:S.settings.receiptSeq, kind:"salaries", personId:id,
+      personName:p?p.name:"?", amount:p?.salary||0, month:m, date:new Date().toISOString().slice(0,10) });
+  }else{
+    S.receipts=S.receipts.filter(r=>!(r.kind==="salaries"&&r.personId===id&&r.month===m));
+  }
+  persist(); renderAll();
+};
+function feeReceipts(sid,m){ return S.receipts.filter(r=>r.kind==="fees"&&r.personId===sid&&r.month===m); }
+function receiptFor(kind,id,m){ return S.receipts.find(r=>r.kind===kind&&r.personId===id&&r.month===m); }
+
+/* record a (possibly partial) fee payment */
+window.payFeeModal=function(sid,m){
+  const s=S.students.find(x=>x.id===sid); if(!s) return;
+  const fee=feeAmt(s), paid=feePaidAmt(m,sid), remaining=Math.max(0,fee-paid);
+  openModal(`
+    <h2>${t("pay_btn")} — ${esc(s.name)}</h2>
+    <p style="color:var(--muted);margin-bottom:16px">${esc(m)} · ${t("f_fee")}: <b>${money(fee)}</b> · ${t("pay_remaining")}: <b style="color:${remaining>0?"var(--red)":"var(--green)"}">${money(remaining)}</b></p>
+    <div class="field"><label>${t("pay_amount")}</label>
+      <input type="number" id="m_payamt" min="0" value="${remaining||fee}"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">${t("cancel")}</button>
+      <button class="btn btn-primary" onclick="saveFeePayment('${sid}','${m}')">${t("save")}</button>
+    </div>`);
+};
+window.saveFeePayment=function(sid,m){
+  const amt=Number($("#m_payamt").value)||0; if(amt<=0) return;
+  const s=S.students.find(x=>x.id===sid); if(!s) return;
+  if(!S.fees[m]) S.fees[m]={};
+  S.fees[m][sid]=(Number(S.fees[m][sid])||0)+amt;
+  S.settings.receiptSeq=(S.settings.receiptSeq||0)+1;
+  S.receipts.push({ id:uid(), no:S.settings.receiptSeq, kind:"fees", personId:sid,
+    personName:s.name, amount:amt, month:m, date:new Date().toISOString().slice(0,10) });
+  persist(); closeModal(); renderAll(); toast(t("t_saved"));
+};
+window.undoFeePayment=function(sid,m){
+  const recs=feeReceipts(sid,m); if(!recs.length) return;
+  const last=recs[recs.length-1];
+  S.receipts=S.receipts.filter(r=>r.id!==last.id);
+  if(S.fees[m]) S.fees[m][sid]=Math.max(0,(Number(S.fees[m][sid])||0)-last.amount);
+  persist(); renderAll(); toast(t("t_deleted"));
+};
+window.feeHistoryModal=function(sid,m){
+  const recs=feeReceipts(sid,m); if(!recs.length) return;
+  const s=S.students.find(x=>x.id===sid);
+  openModal(`
+    <h2>${t("pa_history")} — ${esc(s?s.name:"")}</h2>
+    <table>${recs.map(r=>`<tr>
+      <td>#${String(r.no).padStart(4,"0")}<br><span style="color:var(--muted);font-size:.8rem">${esc(r.date)}</span></td>
+      <td><b>${money(r.amount)}</b></td>
+      <td style="text-align:right"><button class="mini-btn" onclick="showReceipt('${r.id}')">🧾 ${t("receipt")}</button></td>
+    </tr>`).join("")}</table>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="undoFeePayment('${sid}','${m}')">${t("undo_last")}</button>
+      <button class="btn btn-primary" onclick="closeModal()">${t("close")}</button>
+    </div>`);
+};
+
+function renderPayments(){
+  const m=$("#paMonth").value||curMonth;
+  const isFees=payTab==="fees";
+  const q=($("#paSearch").value||"").toLowerCase();
+  $("#paTable").innerHTML = isFees ? feesTableHTML(m,q) : salariesTableHTML(m,q);
+}
+function feesTableHTML(m,q){
+  const rows=S.students.filter(s=>!s.archived && feeDue(s,m) && s.name.toLowerCase().includes(q))
+    .map(s=>({s,fee:feeAmt(s),paid:feePaidAmt(m,s.id),st:feeStatus(s,m)}))
+    .filter(r=>payFilter==="all"||(payFilter==="paid"?r.st==="paid":r.st!=="paid"))
+    .sort((a,b)=>a.s.name.localeCompare(b.s.name));
+  if(!rows.length) return `<div class="empty"><div class="big">💳</div>${t("pa_empty")}</div>`;
+  return `<table><thead><tr><th>${t("th_name")}</th><th>${t("th_class")}</th><th>${t("f_fee")}</th><th>${t("paid")}</th><th>${t("th_status")}</th><th></th></tr></thead><tbody>`+
+    rows.map(r=>{
+      const recs=feeReceipts(r.s.id,m);
+      return `<tr>
+      <td><div class="person">${avatar(r.s)}<b>${esc(r.s.name)}</b></div></td>
+      <td>${esc(className(r.s.classId))}</td>
+      <td>${money(r.fee)}</td>
+      <td>${money(r.paid)}</td>
+      <td><span class="badge ${r.st==="paid"?"badge-paid":r.st==="partial"?"badge-partial":"badge-unpaid"}">${t(r.st==="paid"?"paid":r.st==="partial"?"partial":"unpaid")}</span></td>
+      <td><div class="row-actions">
+        ${recs.length?`<button class="mini-btn" onclick="feeHistoryModal('${r.s.id}','${m}')" title="${t("pa_history")}">🧾 ${recs.length}</button>`:""}
+        ${r.st!=="paid"?`<button class="mini-btn green" onclick="payFeeModal('${r.s.id}','${m}')">${t("pay_btn")}</button>`:""}
+      </div></td></tr>`;}).join("")+"</tbody></table>";
+}
+function salariesTableHTML(m,q){
+  const rows=S.teachers.filter(te=>te.name.toLowerCase().includes(q))
+    .map(te=>({id:te.id,name:te.name,photo:te.photo,sub:te.subject||"",amt:te.salary,paid:salPaid(m,te.id)}))
+    .filter(r=>payFilter==="all"||(payFilter==="paid"?r.paid:!r.paid))
+    .sort((a,b)=>a.name.localeCompare(b.name));
+  if(!rows.length) return `<div class="empty"><div class="big">💳</div>${t("pa_empty")}</div>`;
+  return `<table><thead><tr><th>${t("th_name")}</th><th>${t("th_subject")}</th><th>${t("amount")}</th><th>${t("th_status")}</th><th></th></tr></thead><tbody>`+
+    rows.map(r=>{
+      const rec=r.paid?receiptFor("salaries",r.id,m):null;
+      return `<tr>
+      <td><div class="person">${avatar(r)}<b>${esc(r.name)}</b></div></td><td>${esc(r.sub)}</td><td>${money(r.amt)}</td>
+      <td><span class="badge ${r.paid?"badge-paid":"badge-unpaid"}">${r.paid?t("paid"):t("unpaid")}</span></td>
+      <td><div class="row-actions">
+        ${rec?`<button class="mini-btn" onclick="showReceipt('${rec.id}')" title="${t("receipt")}">🧾</button>`:""}
+        <button class="mini-btn ${r.paid?"":"green"}" onclick="togglePay('salaries','${r.id}','${m}')">${r.paid?t("mark_unpaid"):t("mark_paid")}</button>
+      </div></td></tr>`;}).join("")+"</tbody></table>";
+}
+
+window.showReceipt=function(rid){
+  const r=S.receipts.find(x=>x.id===rid); if(!r) return;
+  const isFee=r.kind==="fees";
+  openModal(`
+    <div class="receipt">
+      <div class="receipt-head">
+        <div class="brand"><div class="brand-mark">SU</div><div><b>SpeakUp English</b><br><span style="font-size:.68rem;color:var(--muted)">${[S.settings.schoolPhone,S.settings.schoolAddress].filter(Boolean).map(esc).join(" · ")||t("by")}</span></div></div>
+        <div style="text-align:right"><b>${t("receipt")} #${String(r.no).padStart(4,"0")}</b><br><span style="color:var(--muted);font-size:.84rem">${esc(r.date)}</span></div>
+      </div>
+      <hr style="border:none;border-top:1.5px dashed var(--line);margin:16px 0">
+      <table class="receipt-table">
+        <tr><td>${isFee?t("rec_from"):t("rec_to")}</td><td><b>${esc(r.personName)}</b></td></tr>
+        <tr><td>${t("rec_month")}</td><td><b>${esc(r.month)}</b></td></tr>
+        <tr><td>${t("amount")}</td><td style="font-size:1.35rem"><b>${money(r.amount)}</b></td></tr>
+      </table>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:26px">
+        <span class="badge badge-paid" style="font-size:.9rem">${t("paid")} ✓</span>
+        <div style="text-align:center;color:var(--muted);font-size:.78rem">________________________<br>${t("rec_sign")}</div>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">${t("close")}</button>
+      <button class="btn btn-primary" onclick="printReceipt()">${t("print")}</button>
+    </div>`);
+};
+window.printReceipt=function(){
+  document.body.classList.add("receipt-print");
+  const done=()=>{ document.body.classList.remove("receipt-print"); window.removeEventListener("afterprint",done); };
+  window.addEventListener("afterprint",done);
+  window.print();
+  setTimeout(done,1000);
+};
+
+/* ============ EXPENSES ============ */
+const CATS=["rent","supplies","utilities","maintenance","other"];
+function renderExpenses(){
+  const m=$("#exMonth").value||curMonth;
+  const list=S.expenses.filter(x=>x.month===m).sort((a,b)=>(a.label||"").localeCompare(b.label||""));
+  const total=list.reduce((s,x)=>s+(Number(x.amount)||0),0);
+  $("#exTable").innerHTML = list.length
+    ? `<table><thead><tr><th>${t("th_label")}</th><th>${t("th_category")}</th><th>${t("amount")}</th><th></th></tr></thead><tbody>`+
+      list.map(x=>`<tr>
+        <td><b>${esc(x.label)}</b></td>
+        <td><span class="badge badge-teal">${t("cat_"+(x.category||"other"))}</span></td>
+        <td>${money(x.amount)}</td>
+        <td><div class="row-actions">
+          <button class="mini-btn" onclick="expenseModal('${x.id}')">${t("edit")}</button>
+          <button class="mini-btn danger" onclick="delExpense('${x.id}')">${t("del")}</button>
+        </div></td></tr>`).join("")+
+      `<tr><td><b>${t("ex_total")}</b></td><td></td><td><b>${money(total)}</b></td><td></td></tr></tbody></table>`
+    : `<div class="empty"><div class="big">🧾</div>${t("no_expenses")}</div>`;
+}
+window.expenseModal=function(id){
+  const x=id?S.expenses.find(e=>e.id===id):null;
+  const m=$("#exMonth").value||curMonth;
+  openModal(`
+    <h2>${x?t("ex_modal_edit"):t("ex_modal_add")}</h2>
+    <div class="field"><label>${t("f_label")}</label><input id="m_exlabel" value="${esc(x?.label||"")}"></div>
+    <div class="grid grid-2">
+      <div class="field"><label>${t("f_category")}</label><select id="m_excat">
+        ${CATS.map(c=>`<option value="${c}" ${x?.category===c?"selected":""}>${t("cat_"+c)}</option>`).join("")}
+      </select></div>
+      <div class="field"><label>${t("f_amount")}</label><input type="number" id="m_examount" min="0" value="${x?.amount??""}"></div>
+    </div>
+    <div class="field"><label>${t("f_month")}</label><input type="month" id="m_exmonth" value="${esc(x?.month||m)}"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">${t("cancel")}</button>
+      <button class="btn btn-primary" onclick="saveExpense('${id||""}')">${t("save")}</button>
+    </div>`);
+};
+window.saveExpense=function(id){
+  const label=$("#m_exlabel").value.trim(); if(!label) return;
+  const data={ label, category:$("#m_excat").value,
+    amount:Number($("#m_examount").value)||0,
+    month:$("#m_exmonth").value||curMonth };
+  if(id){ Object.assign(S.expenses.find(e=>e.id===id),data); }
+  else { S.expenses.push(Object.assign({id:uid()},data)); }
+  persist(); closeModal(); renderAll(); toast(t("t_saved"));
+};
+window.delExpense=function(id){
+  askConfirm(t("confirm_del"),()=>{
+    S.expenses=S.expenses.filter(e=>e.id!==id);
+    persist(); renderAll(); toast(t("t_deleted"));
+  });
+};
+
+/* ============ REVENUE ============ */
+function monthTotals(m){
+  let inn=0,out=0,exp=0;
+  S.students.forEach(s=>{ inn+=feePaidAmt(m,s.id); });
+  S.teachers.forEach(te=>{ if(salPaid(m,te.id)) out+= te.salary||0; });
+  S.expenses.forEach(x=>{ if(x.month===m) exp+= Number(x.amount)||0; });
+  return {inn,out,exp};
+}
+function addMonths(m,n){ const d=new Date(m+"-15"); d.setMonth(d.getMonth()+n); return monthKey(d); }
+function periodMonths(m,period){
+  if(period==="year"){
+    const y=m.slice(0,4);
+    return Array.from({length:12},(_,i)=>y+"-"+String(i+1).padStart(2,"0"));
+  }
+  if(period==="quarter"){
+    const mm=Number(m.slice(5,7));
+    const qStart=Math.floor((mm-1)/3)*3+1;
+    const base=m.slice(0,4)+"-"+String(qStart).padStart(2,"0");
+    return [base, addMonths(base,1), addMonths(base,2)];
+  }
+  return [m];
+}
+function renderRevenue(){
+  const m=$("#reMonth").value||curMonth;
+  const period=$("#rePeriod").value||"month";
+  const span=periodMonths(m,period);
+  let inn=0,out=0,exp=0;
+  span.forEach(mm=>{ const r=monthTotals(mm); inn+=r.inn; out+=r.out; exp+=r.exp; });
+  $("#reIn").textContent=money(inn);
+  $("#reOut").textContent=money(out);
+  $("#reExp").textContent=money(exp);
+  $("#reNet").textContent=money(inn-out-exp);
+  $("#reNetLbl").textContent=t("re_net_"+period);
+  /* chart: 6 trailing months for month/quarter views; the 12 months of the year for year view */
+  let months,label;
+  if(period==="year"){
+    months=span; label=t("chart_year")+" "+m.slice(0,4);
+  }else{
+    const end = period==="quarter" ? span[span.length-1] : m;
+    months=[]; for(let i=5;i>=0;i--) months.push(addMonths(end,-i));
+    label=t("chart_months");
+  }
+  $("#reChartLbl").textContent=label;
+  const totals=months.map(mm=>({m:mm,...monthTotals(mm)}));
+  const max=Math.max(1,...totals.map(x=>Math.max(x.inn,x.out+x.exp)));
+  $("#reBars").innerHTML=totals.map(x=>`
+    <div class="bar-col">
+      <div class="bar-pair">
+        <div class="bar in" style="height:${Math.round(x.inn/max*100)}%" title="${money(x.inn)}"></div>
+        <div class="bar out" style="height:${Math.round((x.out+x.exp)/max*100)}%" title="${money(x.out+x.exp)}"></div>
+      </div>
+      <div class="bar-lbl">${x.m.slice(5)}/${x.m.slice(2,4)}</div>
+    </div>`).join("");
+}
+
+/* ============ SETTINGS ============ */
+function renderSettings(){
+  $("#seLang").value=S.settings.lang;
+  $("#seFee").value=S.settings.defaultFee||0;
+  $("#seCurrency").value=S.settings.currency||"";
+  $("#sePhone").value=S.settings.schoolPhone||"";
+  $("#seAddress").value=S.settings.schoolAddress||"";
+  const lb=$("#seLastBackup");
+  if(!S.settings.lastBackup){ lb.textContent=t("never"); lb.style.color="var(--red)"; }
+  else{
+    const days=Math.floor((Date.now()-S.settings.lastBackup)/86400000);
+    lb.textContent=days+" "+t("days_ago");
+    lb.style.color = days>14 ? "var(--red)" : "var(--muted)";
+  }
+  updateFileLabel();
+}
+function doBackup(silent){
+  const blob=new Blob([JSON.stringify(S,null,2)],{type:"application/json"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="speakup-backup-"+new Date().toISOString().slice(0,10)+".json";
+  a.click(); URL.revokeObjectURL(a.href);
+  S.settings.lastBackup=Date.now(); persist(); renderSettings();
+  toast(silent?t("auto_backup"):t("t_backup"));
+}
+$("#seSaveBtn").addEventListener("click",()=>{
+  S.settings.lang=$("#seLang").value;
+  S.settings.defaultFee=Number($("#seFee").value)||0;
+  S.settings.currency=$("#seCurrency").value.trim();
+  S.settings.schoolPhone=$("#sePhone").value.trim();
+  S.settings.schoolAddress=$("#seAddress").value.trim();
+  persist(); applyLang(); renderAll(); toast(t("t_settings"));
+});
+$("#seBackupBtn").addEventListener("click",()=>doBackup(false));
+$("#seDemoBtn").addEventListener("click",()=>{
+  askConfirm(t("demo_warn"),()=>{ loadDemoData(); persist(); applyLang(); renderAll(); toast(t("demo_done")); });
+});
+$("#seWipeBtn").addEventListener("click",()=>{
+  askConfirm(t("wipe_warn"),()=>{
+    const keep=S.settings;
+    S={students:[],classes:[],teachers:[],expenses:[],receipts:[],overrides:[],rooms:[],fees:{},salaries:{},settings:keep};
+    persist(); renderAll(); toast(t("wipe_done"));
+  });
+});
+function loadDemoData(){
+  const cm=monthKey(new Date());
+  const cls=[{id:"dc1",name:"Beginners A"},{id:"dc2",name:"Beginners B"},{id:"dc3",name:"Intermediate"},{id:"dc4",name:"Advanced"}];
+  const rms=[{id:"dr1",name:"Room 1"},{id:"dr2",name:"Room 2"},{id:"dr3",name:"Room 3"},{id:"dr4",name:"Room 4"}];
+  const names=["Amine Bensaid","Lina Cherif","Yanis Haddad","Sara Belkacem","Rayan Mokhtari","Ines Boudiaf","Mehdi Larbi","Nour Saidi"];
+  const today=new Date();
+  const studs=names.map((n,i)=>({
+    id:"ds"+i, name:n, dob:`201${2+(i%6)}-0${1+(i%9)}-1${i%3}`,
+    joined:monthKey(new Date(today.getFullYear(),today.getMonth()-(i%4),1))+"-05",
+    classId:cls[i%4].id, studentPhone:"055"+String(5550000+i*111),
+    parent:"Parent "+n.split(" ")[1], parentPhone:"066"+String(6660000+i*111),
+    fee:2000+(i%3)*500, notes:i===2?"Peanut allergy":""
+  }));
+  const teach=[
+    {id:"dt1",name:"Mme. Karima",phone:"0770001122",subject:"English",salary:35000,
+     schedule:[{day:"sat",classId:"dc1",roomId:"dr1",from:"09:00",to:"11:00"},{day:"mon",classId:"dc2",roomId:"dr1",from:"09:00",to:"11:00"},{day:"wed",classId:"dc3",roomId:"dr2",from:"14:00",to:"16:00"}]},
+    {id:"dt2",name:"Mr. Sofiane",phone:"0770003344",subject:"English",salary:32000,
+     schedule:[{day:"sat",classId:"dc3",roomId:"dr2",from:"09:00",to:"11:00"},{day:"tue",classId:"dc4",roomId:"dr3",from:"16:00",to:"18:00"}]},
+    {id:"dt3",name:"Mme. Lydia",phone:"0770005566",subject:"Phonics",salary:30000,
+     schedule:[{day:"sun",classId:"dc1",roomId:"dr1",from:"10:00",to:"12:00"},{day:"thu",classId:"dc2",roomId:"dr4",from:"14:00",to:"16:00"}]}
+  ];
+  const fees={}; fees[cm]={}; const receipts=[]; let seq=0;
+  studs.forEach((s,i)=>{
+    if(i%3!==2){ /* 2/3 paid in full */
+      fees[cm][s.id]=s.fee; seq++;
+      receipts.push({id:"drcpt"+seq,no:seq,kind:"fees",personId:s.id,personName:s.name,amount:s.fee,month:cm,date:cm+"-0"+(2+(i%7))});
+    } else if(i%6===2){ /* one partial */
+      fees[cm][s.id]=Math.round(s.fee/2); seq++;
+      receipts.push({id:"drcpt"+seq,no:seq,kind:"fees",personId:s.id,personName:s.name,amount:Math.round(s.fee/2),month:cm,date:cm+"-03"});
+    }
+  });
+  const sal={}; sal[cm]={dt1:true}; seq++;
+  receipts.push({id:"drcpt"+seq,no:seq,kind:"salaries",personId:"dt1",personName:"Mme. Karima",amount:35000,month:cm,date:cm+"-05"});
+  S.students=studs; S.classes=cls; S.rooms=rms; S.teachers=teach;
+  S.fees=fees; S.salaries=sal; S.receipts=receipts; S.overrides=[];
+  S.expenses=[
+    {id:"dex1",label:"Rent",category:"rent",amount:40000,month:cm},
+    {id:"dex2",label:"Whiteboard markers",category:"supplies",amount:2500,month:cm}
+  ];
+  S.settings.receiptSeq=seq;
+  /* demo tests & grades */
+  S.classScale={dc1:20,dc2:20,dc3:20,dc4:10};
+  S.tests=[
+    {id:"dtest1",classId:"dc1",name:"Unit 1"},{id:"dtest2",classId:"dc1",name:"Unit 2"},
+    {id:"dtest3",classId:"dc3",name:"Midterm"}
+  ];
+  S.grades={
+    dtest1:{}, dtest2:{}, dtest3:{}
+  };
+  studs.filter(s=>s.classId==="dc1").forEach((s,i)=>{ S.grades.dtest1[s.id]=[14,8,17,11][i%4]; S.grades.dtest2[s.id]=[12,9,15,13][i%4]; });
+  studs.filter(s=>s.classId==="dc3").forEach((s,i)=>{ S.grades.dtest3[s.id]=[16,7,13][i%3]; });
+}
+$("#seRestoreBtn").addEventListener("click",()=>$("#seRestoreInput").click());
+$("#seRestoreInput").addEventListener("change",e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{ try{ mergeState(JSON.parse(r.result)); persist(); applyLang(); renderAll(); toast(t("t_restored")); }
+    catch(err){ toast(t("t_restore_err")); } };
+  r.readAsText(f); e.target.value="";
+});
+$("#seFileBtn").addEventListener("click",()=>pickFile(true));
+
+/* ============ EVENTS ============ */
+$("#stSearch").addEventListener("input",e=>{stQuery=e.target.value;renderStudents();});
+$("#stClassFilter").addEventListener("change",e=>{stClass=e.target.value;renderStudents();});
+$("#stStatus").addEventListener("change",renderStudents);
+$("#stCsvBtn").addEventListener("click",exportStudentsCSV);
+$("#stAddBtn").addEventListener("click",()=>studentModal(""));
+$("#paSearch").addEventListener("input",renderPayments);
+$("#clAddBtn").addEventListener("click",()=>classModal(""));
+$("#teAddBtn").addEventListener("click",()=>teacherModal(""));
+$("#paTab").addEventListener("change",e=>{payTab=e.target.value;renderPayments();});
+$("#paMonth").addEventListener("change",renderPayments);
+$("#paFilter").addEventListener("change",e=>{payFilter=e.target.value;renderPayments();});
+$("#reMonth").addEventListener("change",renderRevenue);
+$("#rePeriod").addEventListener("change",renderRevenue);
+$("#grClass").addEventListener("change",e=>{grClassId=e.target.value;renderGrades();});
+$("#grScale").addEventListener("change",e=>{ if(grClassId){ S.classScale[grClassId]=Number(e.target.value)||20; persist(); renderGrades(); }});
+$("#grAddTest").addEventListener("click",()=>{ if(S.classes.length) testModal(""); });
+$("#exMonth").addEventListener("change",renderExpenses);
+$("#exAddBtn").addEventListener("click",()=>expenseModal(""));
+$("#schPrev").addEventListener("click",()=>{schOffset--;renderSchedule();});
+$("#schNext").addEventListener("click",()=>{schOffset++;renderSchedule();});
+$("#schToday").addEventListener("click",()=>{schOffset=0;renderSchedule();});
+$("#schRoomsBtn").addEventListener("click",()=>roomsModal());
+
+/* ============ RENDER ALL ============ */
+function renderAll(){
+  applyTheme(); applyLang();
+  renderDashboard(); renderStudents(); renderClasses();
+  renderTeachers(); renderSchedule(); renderGrades(); renderPayments(); renderExpenses(); renderRevenue(); renderSettings();
+}
+
+/* ============ INIT ============ */
+(async function init(){
+  $("#paMonth").value=curMonth; $("#reMonth").value=curMonth; $("#exMonth").value=curMonth;
+  const local=lsLoad(); if(local) mergeState(local);
+  await idb.open();
+  const supportsFS = "showSaveFilePicker" in window;
+  if(supportsFS){
+    const existing=await idb.get("handle");
+    if(existing){ await tryReconnect(); }
+    else if(!local || (!local.students?.length && !local.classes?.length)){
+      /* first run: show setup */
+      $("#setupOverlay").style.display="grid";
+      $("#setupNewBtn").addEventListener("click",async()=>{ if(await pickFile(true)) $("#setupOverlay").style.display="none"; });
+      $("#setupOpenBtn").addEventListener("click",async()=>{ if(await pickFile(false)) $("#setupOverlay").style.display="none"; });
+      $("#setupSkipBtn").addEventListener("click",()=>{ $("#setupOverlay").style.display="none"; setSaveStatus(false); });
+    }
+  } else {
+    setSaveStatus(false);
+  }
+  /* gentle backup reminder every 14 days */
+  const hasData=S.students.length||S.teachers.length;
+  if(hasData && S.settings.lastBackup && Date.now()-S.settings.lastBackup > 30*24*3600*1000){
+    setTimeout(()=>doBackup(true),2000); /* automatic monthly backup */
+  } else if(S.settings.lastBackup && Date.now()-S.settings.lastBackup > 14*24*3600*1000){
+    setTimeout(()=>toast(t("backup_reminder")),2500);
+  }
+  renderAll();
+})();
+</script>
+</body>
+</html>
